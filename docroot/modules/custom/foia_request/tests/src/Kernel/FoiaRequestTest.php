@@ -13,6 +13,11 @@ use Drupal\KernelTests\Core\Entity\EntityKernelTestBase;
  */
 class FoiaRequestTest extends EntityKernelTestBase {
 
+  /**
+   * Lists required modules for FOIA Requests.
+   *
+   * @var modules
+   */
   public static $modules = ['foia_request', 'options', 'field_permissions'];
 
   /**
