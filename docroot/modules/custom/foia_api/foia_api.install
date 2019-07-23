@@ -5,6 +5,32 @@
  * Update functions for the FOIA API module.
  */
 
+use Drupal\Core\Utility\UpdateException;
+
+/**
+ * Helper function to enable a Drupal module and print the result.
+ *
+ * @param string $module_name
+ *   The name of the module.
+ *
+ * @return string
+ *   Output for Drush to display on console.
+ */
+function foia_api_enable_module($module_name) {
+  if (\Drupal::moduleHandler()->moduleExists($module_name)) {
+    echo $module_name . ": Already enabled.";
+  }
+  else {
+    try {
+      \Drupal::service('module_installer')->install([$module_name]);
+      return $module_name . " installed.\n";
+    }
+    catch (Exception $error) {
+      throw new UpdateException("An error occurred installing " . $module_name . ": " . $error . "\n");
+    }
+  }
+}
+
 /**
  * Set Agency Component Centralized field.
  */
@@ -36,4 +62,11 @@ function foia_api_update_8001() {
 
   }
 
+}
+
+/**
+ * Enable view_unpublished module.
+ */
+function foia_api_update_8002() {
+  foia_api_enable_module('view_unpublished');
 }
