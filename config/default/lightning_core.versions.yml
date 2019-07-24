@@ -121,7 +121,6 @@ migrate_tools: 4.0.0-beta3
 csv_serialization: 1.3.0
 views_data_export: 1.0.0-alpha4
 hsts: 1.0.0
-devel: 2.1.0
+devel: 0.0.0
 media_library: 8.6.16
-dblog: 8.7.3
 view_unpublished: 1.0.0-alpha1
