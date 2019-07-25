@@ -41,6 +41,20 @@ events:
             type: script
             script:
               - source ${BLT_DIR}/scripts/pipelines/build_artifact
+  fail-on-build:
+      steps:
+        - runonfailure:
+            type: script
+            script:
+              - "drush cim sync"
+        - tests:
+            type: script
+            script:
+              - source ${BLT_DIR}/scripts/pipelines/tests
+        - build-artifact:
+            type: script
+            script:
+              - source ${BLT_DIR}/scripts/pipelines/build_artifact
   post-deploy:
     steps:
       - deploy:
