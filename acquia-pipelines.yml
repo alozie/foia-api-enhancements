@@ -46,7 +46,7 @@ events:
         - runonfailure:
             type: script
             script:
-              - ${BLT_DIR}/drush/drush cim sync
+              - ${COMPOSER_BIN}/drush/drush cim sync
         - tests:
             type: script
             script:
