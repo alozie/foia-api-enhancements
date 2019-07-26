@@ -43,14 +43,10 @@ events:
               - source ${BLT_DIR}/scripts/pipelines/build_artifact
   fail-on-build:
       steps:
-        - install-drush:
-            type: script
-            script:
-              - composer require drush/drush --ansi
         - import-config:
             type: script
             script:
-              - ${COMPOSER_BIN}/drush cim vcs
+              - blt drupal:config:import
         - tests:
             type: script
             script:
