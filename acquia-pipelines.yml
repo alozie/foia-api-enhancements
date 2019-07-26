@@ -50,7 +50,7 @@ events:
         - import-config:
             type: script
             script:
-              - ${COMPOSER_BIN}/drush/drush cim sync
+              - ${COMPOSER_BIN}/drush cim sync
         - tests:
             type: script
             script:
