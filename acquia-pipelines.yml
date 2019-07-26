@@ -43,7 +43,11 @@ events:
               - source ${BLT_DIR}/scripts/pipelines/build_artifact
   fail-on-build:
       steps:
-        - runonfailure:
+        - install-drush:
+            type: script
+            script:
+              - composer require drush/drush --ansi
+        - import-config:
             type: script
             script:
               - ${COMPOSER_BIN}/drush/drush cim sync
