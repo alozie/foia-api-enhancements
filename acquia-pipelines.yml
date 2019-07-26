@@ -25,10 +25,10 @@ events:
             script:
               - source ${BLT_DIR}/scripts/pipelines/validate
         # Uncomment these lines to test database updates using live content.
-        # - test-updates:
-        #     type: script
-        #     script:
-        #       - blt drupal:sync:default:site
+        - test-updates:
+            type: script
+            script:
+              - blt drupal:sync:default:site
         - setup-app:
             type: script
             script:
@@ -50,7 +50,7 @@ events:
         - import-config:
             type: script
             script:
-              - ${COMPOSER_BIN}/drush cim sync
+              - ${COMPOSER_BIN}/drush cim vcs
         - tests:
             type: script
             script:
