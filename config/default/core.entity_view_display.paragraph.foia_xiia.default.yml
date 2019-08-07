@@ -1,0 +1,25 @@
+uuid: c8f7a31f-685b-4aaf-9adf-20614a9d297f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.foia_xiia.field_agency_component
+    - paragraphs.paragraphs_type.foia_xiia
+  module:
+    - entity_reference_revisions
+id: paragraph.foia_xiia.default
+targetEntityType: paragraph
+bundle: foia_xiia
+mode: default
+content:
+  field_agency_component:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

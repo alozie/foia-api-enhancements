@@ -1,0 +1,25 @@
+uuid: 42b90da9-535a-4ce2-bad4-f5298116e515
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oldest_days.field_agency_component
+    - paragraphs.paragraphs_type.oldest_days
+  module:
+    - entity_reference_revisions
+id: paragraph.oldest_days.default
+targetEntityType: paragraph
+bundle: oldest_days
+mode: default
+content:
+  field_agency_component:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

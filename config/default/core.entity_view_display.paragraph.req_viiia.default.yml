@@ -1,0 +1,25 @@
+uuid: afd7571a-b0ba-4b87-b400-574d5ac57f19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.req_viiia.field_agency_component
+    - paragraphs.paragraphs_type.req_viiia
+  module:
+    - entity_reference_revisions
+id: paragraph.req_viiia.default
+targetEntityType: paragraph
+bundle: req_viiia
+mode: default
+content:
+  field_agency_component:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

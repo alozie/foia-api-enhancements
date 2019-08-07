@@ -1,0 +1,26 @@
+uuid: e3e21c46-9e5a-4047-80bb-c6924363457f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.foia_xiib.field_agency_component
+    - paragraphs.paragraphs_type.foia_xiib
+  module:
+    - entity_reference_revisions
+id: paragraph.foia_xiib.default
+targetEntityType: paragraph
+bundle: foia_xiib
+mode: default
+content:
+  field_agency_component:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
