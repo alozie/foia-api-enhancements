@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.foia_xii_received_proc.field_agency_component
+    - field.field.paragraph.foia_xii_received_proc.field_proc_cur_yr
+    - field.field.paragraph.foia_xii_received_proc.field_proc_last_yr
+    - field.field.paragraph.foia_xii_received_proc.field_received_cur_yr
+    - field.field.paragraph.foia_xii_received_proc.field_received_last_yr
     - paragraphs.paragraphs_type.foia_xii_received_proc
   module:
     - entity_reference_revisions
@@ -20,6 +24,42 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_proc_cur_yr:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_proc_last_yr:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_received_cur_yr:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_received_last_yr:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
 hidden:
   search_api_excerpt: true

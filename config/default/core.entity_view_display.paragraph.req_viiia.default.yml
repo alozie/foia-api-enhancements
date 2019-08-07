@@ -4,9 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.req_viiia.field_agency_component
+    - field.field.paragraph.req_viiia.field_avg_days_jud
+    - field.field.paragraph.req_viiia.field_med_days_jud
+    - field.field.paragraph.req_viiia.field_num_denied
+    - field.field.paragraph.req_viiia.field_num_grant
+    - field.field.paragraph.req_viiia.field_num_jud_w10
     - paragraphs.paragraphs_type.req_viiia
   module:
     - entity_reference_revisions
+    - text
 id: paragraph.req_viiia.default
 targetEntityType: paragraph
 bundle: req_viiia
@@ -20,6 +26,45 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_avg_days_jud:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_med_days_jud:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_num_denied:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_num_grant:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_num_jud_w10:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
 hidden:
   search_api_excerpt: true

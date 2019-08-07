@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sub_xib.field_agency_component
+    - field.field.paragraph.sub_xib.field_rec_post_foia
+    - field.field.paragraph.sub_xib.field_rec_post_prog
     - paragraphs.paragraphs_type.sub_xib
   module:
     - entity_reference_revisions
@@ -20,6 +22,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_revisions_autocomplete
+    region: content
+  field_rec_post_foia:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_rec_post_prog:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
 hidden:
   created: true

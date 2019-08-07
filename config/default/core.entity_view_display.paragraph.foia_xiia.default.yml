@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.foia_xiia.field_agency_component
+    - field.field.paragraph.foia_xiia.field_back_app_end_yr
+    - field.field.paragraph.foia_xiia.field_back_req_end_yr
     - paragraphs.paragraphs_type.foia_xiia
   module:
     - entity_reference_revisions
+    - text
 id: paragraph.foia_xiia.default
 targetEntityType: paragraph
 bundle: foia_xiia
@@ -20,6 +23,22 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_back_app_end_yr:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_back_req_end_yr:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
 hidden:
   search_api_excerpt: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sub_xia.field_agency_component
+    - field.field.paragraph.sub_xia.field_sub_used
     - paragraphs.paragraphs_type.sub_xia
   module:
     - entity_reference_revisions
@@ -20,6 +21,15 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_sub_used:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
 hidden:
   search_api_excerpt: true
