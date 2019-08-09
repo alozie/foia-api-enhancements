@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.annual_foia_report_data.field_admin_app_via
+    - field.field.node.annual_foia_report_data.field_admin_app_vib
     - field.field.node.annual_foia_report_data.field_admin_app_vic1
     - field.field.node.annual_foia_report_data.field_admin_app_vic2
     - field.field.node.annual_foia_report_data.field_admin_app_vic3
@@ -75,6 +77,29 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_7
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_8
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_9
+    - field.field.node.annual_foia_report_data.field_overall_via_app_pend_endyr
+    - field.field.node.annual_foia_report_data.field_overall_via_app_pend_start
+    - field.field.node.annual_foia_report_data.field_overall_via_app_proc_yr
+    - field.field.node.annual_foia_report_data.field_overall_via_app_recd_yr
+    - field.field.node.annual_foia_report_data.field_overall_vib_affirm_on_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_closed_oth_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_comp_on_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_part_on_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_total
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_1
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_2
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_3
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_4
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_5
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_6
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_a
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_b
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_c
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_d
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_e
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_f
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_8
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_9
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -98,6 +123,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_admin_app_via:
+    type: entity_reference_revisions_entity_view
+    weight: 75
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_admin_app_vib:
+    type: entity_reference_revisions_entity_view
+    weight: 79
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_admin_app_vic1:
     type: entity_reference_revisions_entity_view
     weight: 4
@@ -680,6 +723,213 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
+  field_overall_via_app_pend_endyr:
+    weight: 78
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_via_app_pend_start:
+    weight: 74
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_via_app_proc_yr:
+    weight: 77
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_via_app_recd_yr:
+    weight: 76
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vib_affirm_on_app:
+    weight: 80
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vib_closed_oth_app:
+    weight: 83
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vib_comp_on_app:
+    weight: 82
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vib_part_on_app:
+    weight: 81
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vib_total:
+    weight: 84
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_1:
+    weight: 85
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_2:
+    weight: 86
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_3:
+    weight: 87
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_4:
+    weight: 88
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_5:
+    weight: 89
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_6:
+    weight: 90
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_7_a:
+    weight: 91
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_7_b:
+    weight: 93
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_7_c:
+    weight: 94
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_7_d:
+    weight: 95
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_7_e:
+    weight: 96
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_7_f:
+    weight: 97
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_8:
+    weight: 98
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic1_ex_9:
+    weight: 99
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   links:
     weight: 1
     region: content

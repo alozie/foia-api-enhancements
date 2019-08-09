@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.annual_foia_report_data.field_admin_app_via
+    - field.field.node.annual_foia_report_data.field_admin_app_vib
     - field.field.node.annual_foia_report_data.field_admin_app_vic1
     - field.field.node.annual_foia_report_data.field_admin_app_vic2
     - field.field.node.annual_foia_report_data.field_admin_app_vic3
@@ -75,6 +77,29 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_7
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_8
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_9
+    - field.field.node.annual_foia_report_data.field_overall_via_app_pend_endyr
+    - field.field.node.annual_foia_report_data.field_overall_via_app_pend_start
+    - field.field.node.annual_foia_report_data.field_overall_via_app_proc_yr
+    - field.field.node.annual_foia_report_data.field_overall_via_app_recd_yr
+    - field.field.node.annual_foia_report_data.field_overall_vib_affirm_on_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_closed_oth_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_comp_on_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_part_on_app
+    - field.field.node.annual_foia_report_data.field_overall_vib_total
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_1
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_2
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_3
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_4
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_5
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_6
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_a
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_b
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_c
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_d
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_e
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_f
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_8
+    - field.field.node.annual_foia_report_data.field_overall_vic1_ex_9
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -132,9 +157,9 @@ third_party_settings:
       label: 'V.B.(1). DISPOSITION OF FOIA REQUESTS -- ALL PROCESSED REQUESTS '
     group_overall_vb1_main:
       children:
+        - field_overall_vb1_full_grants
         - field_overall_vb1_part_grants_de
         - field_overall_vb1_full_denials_e
-        - field_overall_vb1_full_grants
       parent_name: group_vb1_disp_foia_proc_reqs
       weight: 5
       format_type: tab
@@ -225,6 +250,11 @@ third_party_settings:
       label: 'V.B.(3). DISPOSITION OF FOIA REQUESTS -- NUMBER OF TIMES EXEMPTIONS APPLIED'
     group_vi_a_administrative_appeal:
       children:
+        - field_admin_app_via
+        - field_overall_via_app_pend_start
+        - field_overall_via_app_recd_yr
+        - field_overall_via_app_proc_yr
+        - field_overall_via_app_pend_endyr
         - field_footnotes_via
       parent_name: ''
       weight: 7
@@ -253,6 +283,20 @@ third_party_settings:
     group_vi_c_1_reasons_for_denial_:
       children:
         - field_admin_app_vic1
+        - field_overall_vic1_ex_1
+        - field_overall_vic1_ex_2
+        - field_overall_vic1_ex_3
+        - field_overall_vic1_ex_4
+        - field_overall_vic1_ex_5
+        - field_overall_vic1_ex_6
+        - field_overall_vic1_ex_7_a
+        - field_overall_vic1_ex_7_b
+        - field_overall_vic1_ex_7_c
+        - field_overall_vic1_ex_7_d
+        - field_overall_vic1_ex_7_e
+        - field_overall_vic1_ex_7_f
+        - field_overall_vic1_ex_8
+        - field_overall_vic1_ex_9
         - field_footnotes_vic1
       parent_name: ''
       weight: 9
@@ -266,6 +310,12 @@ third_party_settings:
       label: 'VI.C.(1). REASONS FOR DENIAL ON APPEAL -- NUMBER OF TIMES EXEMPTIONS APPLIED'
     group_vi_b_disposition_of_admini:
       children:
+        - field_admin_app_vib
+        - field_overall_vib_affirm_on_app
+        - field_overall_vib_part_on_app
+        - field_overall_vib_comp_on_app
+        - field_overall_vib_closed_oth_app
+        - field_overall_vib_total
         - field_footnotes_vib
       parent_name: ''
       weight: 8
@@ -525,7 +575,7 @@ third_party_settings:
     group_vii_b_processed_requests_c:
       children: {  }
       parent_name: group_vii_b_processed_requests_r
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -537,7 +587,7 @@ third_party_settings:
     group_vii_b_processed_requests_e:
       children: {  }
       parent_name: group_vii_b_processed_requests_r
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -637,6 +687,7 @@ third_party_settings:
       label: 'VII.D. PENDING REQUESTS -- Complex'
     group_vii_e_pending_requests_ten:
       children:
+        - group_xiie1_num_appeals_proc
         - group_vii_e_pending_requests_10t
         - group_vii_e_pending_requests_9th
         - group_vii_e_pending_requests_8th
@@ -648,7 +699,6 @@ third_party_settings:
         - group_vii_e_pending_requests_2nd
         - group_vii_e_pending_requests_old
         - field_footnotes_viie
-        - group_xiie1_num_appeals_proc
       parent_name: ''
       weight: 20
       format_type: tabs
@@ -941,7 +991,7 @@ third_party_settings:
     group_xii_c_9th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -953,7 +1003,7 @@ third_party_settings:
     group_xii_c_8th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -965,7 +1015,7 @@ third_party_settings:
     group_xii_c_7th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 23
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -977,7 +1027,7 @@ third_party_settings:
     group_xii_c_6th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 24
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -989,7 +1039,7 @@ third_party_settings:
     group_xii_c_5th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -1037,7 +1087,7 @@ third_party_settings:
     group_xii_c_oldest_consultation:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 29
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -1100,7 +1150,7 @@ third_party_settings:
       children:
         - field_footnotes_xiie1
       parent_name: ''
-      weight: 33
+      weight: 32
       format_type: tabs
       format_settings:
         id: ''
@@ -1111,7 +1161,7 @@ third_party_settings:
       children:
         - field_footnotes_xiie2
       parent_name: ''
-      weight: 34
+      weight: 33
       format_type: tab
       format_settings:
         id: ''
@@ -1150,6 +1200,30 @@ targetEntityType: node
 bundle: annual_foia_report_data
 mode: default
 content:
+  field_admin_app_via:
+    type: entity_reference_paragraphs
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_admin_app_vib:
+    type: entity_reference_paragraphs
+    weight: 34
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_admin_app_vic1:
     type: entity_reference_paragraphs
     weight: 26
@@ -1325,7 +1399,7 @@ content:
     third_party_settings: {  }
   field_footnotes_vb3:
     type: text_textarea
-    weight: 30
+    weight: 31
     region: content
     settings:
       rows: 5
@@ -1333,7 +1407,7 @@ content:
     third_party_settings: {  }
   field_footnotes_via:
     type: text_textarea
-    weight: 16
+    weight: 32
     region: content
     settings:
       rows: 5
@@ -1341,7 +1415,7 @@ content:
     third_party_settings: {  }
   field_footnotes_vib:
     type: text_textarea
-    weight: 44
+    weight: 40
     region: content
     settings:
       rows: 5
@@ -1349,7 +1423,7 @@ content:
     third_party_settings: {  }
   field_footnotes_vic1:
     type: text_textarea
-    weight: 27
+    weight: 41
     region: content
     settings:
       rows: 5
@@ -1373,7 +1447,7 @@ content:
     third_party_settings: {  }
   field_footnotes_vic4:
     type: text_textarea
-    weight: 24
+    weight: 22
     region: content
     settings:
       rows: 5
@@ -1397,7 +1471,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viib:
     type: text_textarea
-    weight: 23
+    weight: 24
     region: content
     settings:
       rows: 5
@@ -1485,7 +1559,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiia:
     type: text_textarea
-    weight: 38
+    weight: 56
     region: content
     settings:
       rows: 5
@@ -1501,7 +1575,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiic:
     type: text_textarea
-    weight: 30
+    weight: 28
     region: content
     settings:
       rows: 5
@@ -1509,7 +1583,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiid1:
     type: text_textarea
-    weight: 22
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -1525,7 +1599,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiie1:
     type: text_textarea
-    weight: 35
+    weight: 9
     region: content
     settings:
       rows: 5
@@ -1583,7 +1657,7 @@ content:
     third_party_settings: {  }
   field_overall_vb1_full_denials_e:
     type: number
-    weight: 2
+    weight: 5
     region: content
     settings:
       placeholder: ''
@@ -1625,7 +1699,7 @@ content:
     third_party_settings: {  }
   field_overall_vb1_part_grants_de:
     type: number
-    weight: 1
+    weight: 4
     region: content
     settings:
       placeholder: ''
@@ -1721,28 +1795,189 @@ content:
     third_party_settings: {  }
   field_overall_vb3_ex_7:
     type: number
-    weight: 27
+    weight: 28
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb3_ex_8:
     type: number
-    weight: 28
+    weight: 29
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb3_ex_9:
     type: number
-    weight: 29
+    weight: 30
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_overall_via_app_pend_endyr:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_via_app_pend_start:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_via_app_proc_yr:
+    weight: 30
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_via_app_recd_yr:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vib_affirm_on_app:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vib_closed_oth_app:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vib_comp_on_app:
+    weight: 37
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vib_part_on_app:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vib_total:
+    weight: 39
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_1:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_2:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_3:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_4:
+    weight: 30
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_5:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_6:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_7_a:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_7_b:
+    weight: 34
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_7_c:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_7_d:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_7_e:
+    weight: 37
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_7_f:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_8:
+    weight: 39
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_vic1_ex_9:
+    weight: 40
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   moderation_state:
     type: string_textfield
-    weight: 37
+    weight: 34
     region: content
     settings:
       size: 60
