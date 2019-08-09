@@ -648,6 +648,7 @@ third_party_settings:
         - group_vii_e_pending_requests_2nd
         - group_vii_e_pending_requests_old
         - field_footnotes_viie
+        - group_xiie1_num_appeals_proc
       parent_name: ''
       weight: 20
       format_type: tabs
@@ -1119,6 +1120,31 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'XII.E.(2). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED APPEALS'
+    group_xiie1_num_appeals_recd:
+      children: {  }
+      parent_name: group_xiie1_num_appeals_proc
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.E.(1). -- NUMBER OF APPEALS RECEIVED'
+    group_xiie1_num_appeals_proc:
+      children:
+        - group_xiie1_num_appeals_recd
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.E.(1). -- NUMBER OF APPEALS PROCESSED'
 id: node.annual_foia_report_data.default
 targetEntityType: node
 bundle: annual_foia_report_data
