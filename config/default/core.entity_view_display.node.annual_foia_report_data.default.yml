@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_admin_app_vic1
     - field.field.node.annual_foia_report_data.field_admin_app_vic2
     - field.field.node.annual_foia_report_data.field_admin_app_vic3
+    - field.field.node.annual_foia_report_data.field_admin_app_vic4
     - field.field.node.annual_foia_report_data.field_admin_app_vic5
     - field.field.node.annual_foia_report_data.field_agency
     - field.field.node.annual_foia_report_data.field_agency_components
@@ -100,6 +101,24 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vic1_ex_7_f
     - field.field.node.annual_foia_report_data.field_overall_vic1_ex_8
     - field.field.node.annual_foia_report_data.field_overall_vic1_ex_9
+    - field.field.node.annual_foia_report_data.field_overall_vic2_app_denial_ex
+    - field.field.node.annual_foia_report_data.field_overall_vic2_dup_req
+    - field.field.node.annual_foia_report_data.field_overall_vic2_fee_rel_reas
+    - field.field.node.annual_foia_report_data.field_overall_vic2_imp_req_oth
+    - field.field.node.annual_foia_report_data.field_overall_vic2_no_rec
+    - field.field.node.annual_foia_report_data.field_overall_vic2_not_agency_re
+    - field.field.node.annual_foia_report_data.field_overall_vic2_oth
+    - field.field.node.annual_foia_report_data.field_overall_vic2_rec_not_desc
+    - field.field.node.annual_foia_report_data.field_overall_vic2_rec_refer_ini
+    - field.field.node.annual_foia_report_data.field_overall_vic2_req_in_lit
+    - field.field.node.annual_foia_report_data.field_overall_vic2_req_withdrawn
+    - field.field.node.annual_foia_report_data.field_overall_vic3_desc_oth_reas
+    - field.field.node.annual_foia_report_data.field_overall_vic3_num_relied_up
+    - field.field.node.annual_foia_report_data.field_overall_vic3_total
+    - field.field.node.annual_foia_report_data.field_overall_vic4_avg_num_days
+    - field.field.node.annual_foia_report_data.field_overall_vic4_high_num_days
+    - field.field.node.annual_foia_report_data.field_overall_vic4_low_num_days
+    - field.field.node.annual_foia_report_data.field_overall_vic4_med_num_days
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -168,6 +187,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_admin_app_vic4:
+    type: entity_reference_revisions_entity_view
+    weight: 115
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_admin_app_vic5:
     type: entity_reference_revisions_entity_view
     weight: 42
@@ -929,6 +957,174 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_overall_vic2_app_denial_ex:
+    weight: 110
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_dup_req:
+    weight: 108
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_fee_rel_reas:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_imp_req_oth:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_no_rec:
+    weight: 100
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_not_agency_re:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_oth:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_rec_not_desc:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_rec_refer_ini:
+    weight: 101
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_req_in_lit:
+    weight: 109
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic2_req_withdrawn:
+    weight: 102
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic3_desc_oth_reas:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic3_num_relied_up:
+    weight: 113
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic3_total:
+    weight: 114
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_overall_vic4_avg_num_days:
+    weight: 117
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_overall_vic4_high_num_days:
+    weight: 120
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_overall_vic4_low_num_days:
+    weight: 119
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_overall_vic4_med_num_days:
+    weight: 116
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
     region: content
   links:
     weight: 1
