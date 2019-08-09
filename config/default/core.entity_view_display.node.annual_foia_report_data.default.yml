@@ -7,6 +7,10 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_admin_app_vic2
     - field.field.node.annual_foia_report_data.field_admin_app_vic3
     - field.field.node.annual_foia_report_data.field_admin_app_vic5
+    - field.field.node.annual_foia_report_data.field_agency
+    - field.field.node.annual_foia_report_data.field_agency_components
+    - field.field.node.annual_foia_report_data.field_date_prepared
+    - field.field.node.annual_foia_report_data.field_foia_annual_report_yr
     - field.field.node.annual_foia_report_data.field_foia_requests_va
     - field.field.node.annual_foia_report_data.field_foia_requests_vb1
     - field.field.node.annual_foia_report_data.field_foia_requests_vb2
@@ -73,7 +77,10 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_9
     - node.type.annual_foia_report_data
   module:
+    - datetime
+    - entity_reference_revisions
     - panelizer
+    - text
     - user
 third_party_settings:
   panelizer:
@@ -87,82 +94,596 @@ bundle: annual_foia_report_data
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_admin_app_vic1:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_admin_app_vic2:
+    type: entity_reference_revisions_entity_view
+    weight: 39
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_admin_app_vic3:
+    type: entity_reference_revisions_entity_view
+    weight: 41
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_admin_app_vic5:
+    type: entity_reference_revisions_entity_view
+    weight: 42
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_agency:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_agency_components:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_date_prepared:
+    weight: 73
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_foia_annual_report_yr:
+    weight: 72
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_foia_requests_va:
+    type: entity_reference_revisions_entity_view
+    weight: 43
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_foia_requests_vb1:
+    type: entity_reference_revisions_entity_view
+    weight: 44
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_foia_requests_vb2:
+    type: entity_reference_revisions_entity_view
+    weight: 45
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_foia_requests_vb3:
+    type: entity_reference_revisions_entity_view
+    weight: 46
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_footnotes_iv:
+    type: text_default
+    weight: 48
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_ix:
+    type: text_default
+    weight: 47
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_va:
+    type: text_default
+    weight: 49
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vb1:
+    type: text_default
+    weight: 50
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vb2:
+    type: text_default
+    weight: 51
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vb3:
+    type: text_default
+    weight: 52
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_via:
+    type: text_default
+    weight: 53
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vib:
+    type: text_default
+    weight: 54
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vic1:
+    type: text_default
+    weight: 40
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vic2:
+    type: text_default
+    weight: 55
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vic3:
+    type: text_default
+    weight: 65
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vic4:
+    type: text_default
+    weight: 71
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_vic5:
+    type: text_default
+    weight: 69
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viia:
+    type: text_default
+    weight: 70
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viib:
+    type: text_default
+    weight: 68
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viic1:
+    type: text_default
+    weight: 66
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viic2:
+    type: text_default
+    weight: 67
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viic3:
+    type: text_default
+    weight: 63
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viid:
+    type: text_default
+    weight: 56
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viie:
+    type: text_default
+    weight: 64
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viiia:
+    type: text_default
+    weight: 62
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_viiib:
+    type: text_default
+    weight: 61
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_x:
+    type: text_default
+    weight: 60
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xia:
+    type: text_default
+    weight: 58
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xib:
+    type: text_default
+    weight: 57
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiia:
+    type: text_default
+    weight: 59
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiib:
+    type: text_default
+    weight: 38
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiic:
+    type: text_default
+    weight: 21
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiid1:
+    type: text_default
+    weight: 37
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiid2:
+    type: text_default
+    weight: 6
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiie1:
+    type: text_default
+    weight: 7
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_footnotes_xiie2:
+    type: text_default
+    weight: 8
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_overall_req_pend_end_yr:
+    type: number_integer
+    weight: 9
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_req_pend_start_yr:
+    type: number_integer
+    weight: 10
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_req_processed_yr:
+    type: number_integer
+    weight: 11
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_req_received_yr:
+    type: number_integer
+    weight: 12
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_dup_request:
+    type: number_integer
+    weight: 13
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_fee_related_re:
+    type: number_integer
+    weight: 14
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_full_denials_e:
+    type: number_integer
+    weight: 15
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_full_grants:
+    type: number_integer
+    weight: 16
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_imp_req_oth_re:
+    type: number_integer
+    weight: 17
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_no_rec:
+    type: number_integer
+    weight: 18
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_not_agency_rec:
+    type: number_integer
+    weight: 19
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_oth:
+    type: number_integer
+    weight: 5
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_part_grants_de:
+    type: number_integer
+    weight: 20
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_rec_not_desc:
+    type: number_integer
+    weight: 31
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_rec_ref_to_an_:
+    type: number_integer
+    weight: 36
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_req_withdrawn:
+    type: number_integer
+    weight: 35
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb1_total:
+    type: number_integer
+    weight: 34
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb2:
+    type: entity_reference_revisions_entity_view
+    weight: 33
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_overall_vb2_total:
+    type: number_integer
+    weight: 32
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_1:
+    type: number_integer
+    weight: 22
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_2:
+    type: number_integer
+    weight: 23
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_3:
+    type: number_integer
+    weight: 24
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_4:
+    type: number_integer
+    weight: 25
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_5:
+    type: number_integer
+    weight: 26
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_6:
+    type: number_integer
+    weight: 27
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_7:
+    type: number_integer
+    weight: 28
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_8:
+    type: number_integer
+    weight: 29
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_overall_vb3_ex_9:
+    type: number_integer
+    weight: 30
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_admin_app_vic1: true
-  field_admin_app_vic2: true
-  field_admin_app_vic3: true
-  field_admin_app_vic5: true
-  field_foia_requests_va: true
-  field_foia_requests_vb1: true
-  field_foia_requests_vb2: true
-  field_foia_requests_vb3: true
-  field_footnotes_iv: true
-  field_footnotes_ix: true
-  field_footnotes_va: true
-  field_footnotes_vb1: true
-  field_footnotes_vb2: true
-  field_footnotes_vb3: true
-  field_footnotes_via: true
-  field_footnotes_vib: true
-  field_footnotes_vic1: true
-  field_footnotes_vic2: true
-  field_footnotes_vic3: true
-  field_footnotes_vic4: true
-  field_footnotes_vic5: true
-  field_footnotes_viia: true
-  field_footnotes_viib: true
-  field_footnotes_viic1: true
-  field_footnotes_viic2: true
-  field_footnotes_viic3: true
-  field_footnotes_viid: true
-  field_footnotes_viie: true
-  field_footnotes_viiia: true
-  field_footnotes_viiib: true
-  field_footnotes_x: true
-  field_footnotes_xia: true
-  field_footnotes_xib: true
-  field_footnotes_xiia: true
-  field_footnotes_xiib: true
-  field_footnotes_xiic: true
-  field_footnotes_xiid1: true
-  field_footnotes_xiid2: true
-  field_footnotes_xiie1: true
-  field_footnotes_xiie2: true
-  field_overall_req_pend_end_yr: true
-  field_overall_req_pend_start_yr: true
-  field_overall_req_processed_yr: true
-  field_overall_req_received_yr: true
-  field_overall_vb1_dup_request: true
-  field_overall_vb1_fee_related_re: true
-  field_overall_vb1_full_denials_e: true
-  field_overall_vb1_full_grants: true
-  field_overall_vb1_imp_req_oth_re: true
-  field_overall_vb1_no_rec: true
-  field_overall_vb1_not_agency_rec: true
-  field_overall_vb1_oth: true
-  field_overall_vb1_part_grants_de: true
-  field_overall_vb1_rec_not_desc: true
-  field_overall_vb1_rec_ref_to_an_: true
-  field_overall_vb1_req_withdrawn: true
-  field_overall_vb1_total: true
-  field_overall_vb2: true
-  field_overall_vb2_total: true
-  field_overall_vb3_ex_1: true
-  field_overall_vb3_ex_2: true
-  field_overall_vb3_ex_3: true
-  field_overall_vb3_ex_4: true
-  field_overall_vb3_ex_5: true
-  field_overall_vb3_ex_6: true
-  field_overall_vb3_ex_7: true
-  field_overall_vb3_ex_8: true
-  field_overall_vb3_ex_9: true
   search_api_excerpt: true

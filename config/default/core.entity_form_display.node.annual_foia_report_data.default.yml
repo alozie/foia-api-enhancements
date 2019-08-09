@@ -7,6 +7,10 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_admin_app_vic2
     - field.field.node.annual_foia_report_data.field_admin_app_vic3
     - field.field.node.annual_foia_report_data.field_admin_app_vic5
+    - field.field.node.annual_foia_report_data.field_agency
+    - field.field.node.annual_foia_report_data.field_agency_components
+    - field.field.node.annual_foia_report_data.field_date_prepared
+    - field.field.node.annual_foia_report_data.field_foia_annual_report_yr
     - field.field.node.annual_foia_report_data.field_foia_requests_va
     - field.field.node.annual_foia_report_data.field_foia_requests_vb1
     - field.field.node.annual_foia_report_data.field_foia_requests_vb2
@@ -72,9 +76,8 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_8
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_9
     - node.type.annual_foia_report_data
-    - workflows.workflow.annual_report_workflow
   module:
-    - content_moderation
+    - datetime
     - field_group
     - paragraphs
     - text
@@ -84,7 +87,7 @@ third_party_settings:
       children:
         - field_footnotes_iv
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tab
       format_settings:
         id: ''
@@ -102,7 +105,7 @@ third_party_settings:
         - field_overall_req_pend_end_yr
         - field_footnotes_va
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -113,38 +116,82 @@ third_party_settings:
       label: 'V.A. FOIA REQUESTS -- RECEIVED, PROCESSED AND PENDING FOIA REQUESTS '
     group_vb1_disp_foia_proc_reqs:
       children:
+        - field_foia_requests_vb1
         - group_overall_vb1_main
         - group_overall_vb1_num_full_deny
+        - field_overall_vb1_total
+        - field_footnotes_vb1
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tabs
       format_settings:
+        label: 'V.B.(1). DISPOSITION OF FOIA REQUESTS -- ALL PROCESSED REQUESTS '
+        direction: vertical
         id: ''
         classes: ''
-        direction: horizontal
       label: 'V.B.(1). DISPOSITION OF FOIA REQUESTS -- ALL PROCESSED REQUESTS '
     group_overall_vb1_main:
       children:
         - field_overall_vb1_part_grants_de
         - field_overall_vb1_full_denials_e
         - field_overall_vb1_full_grants
-        - field_footnotes_vb1
       parent_name: group_vb1_disp_foia_proc_reqs
+      weight: 5
+      format_type: tab
+      format_settings:
+        label: 'V.B.(1). --- Main'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'V.B.(1). --- Main'
+    group_overall_vb1_num_full_deny:
+      children:
+        - field_overall_vb1_no_rec
+        - field_overall_vb1_rec_ref_to_an_
+        - field_overall_vb1_req_withdrawn
+        - field_overall_vb1_fee_related_re
+        - field_overall_vb1_rec_not_desc
+        - field_overall_vb1_imp_req_oth_re
+        - field_overall_vb1_not_agency_rec
+        - field_overall_vb1_dup_request
+        - field_overall_vb1_oth
+      parent_name: group_vb1_disp_foia_proc_reqs
+      weight: 6
+      format_type: tab
+      format_settings:
+        label: 'V.B.(1). --- Number of Full Denials Based on Reasons Other than Exemptions'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'V.B.(1). --- Number of Full Denials Based on Reasons Other than Exemptions'
+    group_agency_info:
+      children:
+        - field_agency
+        - field_agency_components
+        - field_foia_annual_report_yr
+        - field_date_prepared
+      parent_name: ''
       weight: 1
       format_type: tab
       format_settings:
         id: ''
         classes: ''
-        formatter: closed
+        formatter: open
         description: ''
         required_fields: true
-      label: Main
-    group_overall_vb1_num_full_deny:
+      label: 'Agency Info'
+    group_v_b_2_disposition_of_foia_:
       children:
-        - field_overall_vb1_no_rec
-        - field_overall_vb1_rec_ref_to_an_
-      parent_name: group_vb1_disp_foia_proc_reqs
-      weight: 2
+        - field_foia_requests_vb2
+        - field_overall_vb2
+        - field_overall_vb2_total
+        - field_footnotes_vb2
+      parent_name: ''
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -152,18 +199,934 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'Number of Full Denials Based on Reasons Other than Exemptions'
+      label: 'V.B.(2). DISPOSITION OF FOIA REQUESTS -- "OTHER" REASONS FOR "FULL DENIALS BASED ON REASONS OTHER THAN EXEMPTIONS"'
+    group_v_b_3_disposition_of_foia_:
+      children:
+        - field_foia_requests_vb3
+        - field_overall_vb3_ex_1
+        - field_overall_vb3_ex_2
+        - field_overall_vb3_ex_3
+        - field_overall_vb3_ex_4
+        - field_overall_vb3_ex_5
+        - field_overall_vb3_ex_6
+        - field_overall_vb3_ex_7
+        - field_overall_vb3_ex_8
+        - field_overall_vb3_ex_9
+        - field_footnotes_vb3
+      parent_name: ''
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'V.B.(3). DISPOSITION OF FOIA REQUESTS -- NUMBER OF TIMES EXEMPTIONS APPLIED'
+    group_vi_a_administrative_appeal:
+      children:
+        - field_footnotes_via
+      parent_name: ''
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.A. ADMINISTRATIVE APPEALS OF INITIAL DETERMINATIONS OF FOIA REQUESTS -- RECEIVED, PROCESSED, AND PENDING ADMINISTRATIVE APPEA'
+    group_vi_c_2_reasons_for_denial_:
+      children:
+        - field_admin_app_vic2
+        - field_footnotes_vic2
+      parent_name: ''
+      weight: 10
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(2). REASONS FOR DENIAL ON APPEAL -- REASONS OTHER THAN EXEMPTIONS'
+    group_vi_c_1_reasons_for_denial_:
+      children:
+        - field_admin_app_vic1
+        - field_footnotes_vic1
+      parent_name: ''
+      weight: 9
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(1). REASONS FOR DENIAL ON APPEAL -- NUMBER OF TIMES EXEMPTIONS APPLIED'
+    group_vi_b_disposition_of_admini:
+      children:
+        - field_footnotes_vib
+      parent_name: ''
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.B. DISPOSITION OF ADMINISTRATIVE APPEALS -- ALL PROCESSED APPEALS '
+    group_vi_c_3_reasons_for_denial_:
+      children:
+        - field_admin_app_vic3
+        - field_footnotes_vic3
+      parent_name: ''
+      weight: 11
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(3). REASONS FOR DENIAL ON APPEAL -- "OTHER" REASONS '
+    group_vi_c_4_response_time_for_a:
+      children:
+        - field_footnotes_vic4
+      parent_name: ''
+      weight: 12
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(4). RESPONSE TIME FOR ADMINISTRATIVE APPEALS'
+    group_vi_c_5_ten_oldest_pending_:
+      children:
+        - group_vi_c_5_10th
+        - group_vi_c_5_9th
+        - group_vi_c_5_8th
+        - group_vi_c_5_7th
+        - group_vi_c_5_6th
+        - group_vi_c_5_5th
+        - group_vi_c_5_4th
+        - group_vi_c_5_3rd
+        - group_vi_c_5_2nd
+        - group_vi_c_5_oldest_appeal
+        - field_admin_app_vic5
+        - field_footnotes_vic5
+      parent_name: ''
+      weight: 13
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'VI.C.(5). TEN OLDEST PENDING ADMINISTRATIVE APPEALS'
+    group_vi_c_5_10th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 10th'
+    group_vi_c_5_9th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 9th'
+    group_vi_c_5_8th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 8th'
+    group_vi_c_5_7th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 7th'
+    group_vi_c_5_6th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 6th'
+    group_vi_c_5_5th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 27
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 5th'
+    group_vi_c_5_4th:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 28
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 4th'
+    group_vi_c_5_3rd:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 30
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 3rd'
+    group_vi_c_5_2nd:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 31
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- 2nd'
+    group_vi_c_5_oldest_appeal:
+      children: {  }
+      parent_name: group_vi_c_5_ten_oldest_pending_
+      weight: 32
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VI.C.(5). -- Oldest Appeal'
+    group_vii_a_foia_requests_respon:
+      children:
+        - group_vii_a_foia_requests_simple
+        - group_vii_a_foia_requests_comple
+        - group_vii_a_foia_requests_expedi
+        - field_footnotes_viia
+      parent_name: ''
+      weight: 14
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'VII.A. FOIA REQUESTS -- RESPONSE TIME FOR ALL PROCESSED PERFECTED REQUESTS'
+    group_vii_a_foia_requests_simple:
+      children: {  }
+      parent_name: group_vii_a_foia_requests_respon
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.A. FOIA REQUESTS -- Simple'
+    group_vii_a_foia_requests_comple:
+      children: {  }
+      parent_name: group_vii_a_foia_requests_respon
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.A. FOIA REQUESTS -- Complex'
+    group_vii_a_foia_requests_expedi:
+      children: {  }
+      parent_name: group_vii_a_foia_requests_respon
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.A. FOIA REQUESTS -- Expedited Processing'
+    group_vii_b_processed_requests_r:
+      children:
+        - group_vii_b_processed_requests_s
+        - group_vii_b_processed_requests_c
+        - group_vii_b_processed_requests_e
+        - field_footnotes_viib
+      parent_name: ''
+      weight: 15
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'VII.B. PROCESSED REQUESTS -- RESPONSE TIME FOR PERFECTED REQUESTS IN WHICH INFORMATION WAS GRANTED'
+    group_vii_b_processed_requests_s:
+      children: {  }
+      parent_name: group_vii_b_processed_requests_r
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.B. PROCESSED REQUESTS -- Simple'
+    group_vii_b_processed_requests_c:
+      children: {  }
+      parent_name: group_vii_b_processed_requests_r
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.B. PROCESSED REQUESTS -- Complex'
+    group_vii_b_processed_requests_e:
+      children: {  }
+      parent_name: group_vii_b_processed_requests_r
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.B. PROCESSED REQUESTS -- Expedited Processing'
+    group_vii_c_1_processed_simple_r:
+      children:
+        - field_footnotes_viic1
+      parent_name: ''
+      weight: 16
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.C.1 PROCESSED SIMPLE REQUESTS -- RESPONSE TIME IN DAY INCREMENTS'
+    group_vii_c_2_processed_complex_:
+      children:
+        - field_footnotes_viic2
+      parent_name: ''
+      weight: 17
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.C.2 PROCESSED COMPLEX REQUESTS -- RESPONSE TIME IN DAY INCREMENTS '
+    group_vii_c_3_processed_requests:
+      children:
+        - field_footnotes_viic3
+      parent_name: ''
+      weight: 18
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.C.3 PROCESSED REQUESTS GRANTED EXPEDITED PROCESSING -- RESPONSE TIME IN DAY INCREMENTS '
+    group_vii_d_pending_requests_all:
+      children:
+        - group_vii_d_pending_requests_sim
+        - group_vii_d_pending_requests_com
+        - group_vii_d_pending_requests_exp
+        - field_footnotes_viid
+      parent_name: ''
+      weight: 19
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'VII.D. PENDING REQUESTS -- ALL PENDING PERFECTED REQUESTS'
+    group_vii_d_pending_requests_exp:
+      children: {  }
+      parent_name: group_vii_d_pending_requests_all
+      weight: 28
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.D. PENDING REQUESTS -- Expedited Processing'
+    group_vii_d_pending_requests_sim:
+      children: {  }
+      parent_name: group_vii_d_pending_requests_all
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.D. PENDING REQUESTS -- Simple'
+    group_vii_d_pending_requests_com:
+      children: {  }
+      parent_name: group_vii_d_pending_requests_all
+      weight: 27
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.D. PENDING REQUESTS -- Complex'
+    group_vii_e_pending_requests_ten:
+      children:
+        - group_vii_e_pending_requests_10t
+        - group_vii_e_pending_requests_9th
+        - group_vii_e_pending_requests_8th
+        - group_vii_e_pending_requests_7th
+        - group_vii_e_pending_requests_6th
+        - group_vii_e_pending_requests_5th
+        - group_vii_e_pending_requests_4th
+        - group_vii_e_pending_requests_3rd
+        - group_vii_e_pending_requests_2nd
+        - group_vii_e_pending_requests_old
+        - field_footnotes_viie
+      parent_name: ''
+      weight: 20
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS '
+    group_vii_e_pending_requests_10t:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 10th'
+    group_vii_e_pending_requests_9th:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 9th'
+    group_vii_e_pending_requests_8th:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 8th'
+    group_vii_e_pending_requests_7th:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 7th'
+    group_vii_e_pending_requests_6th:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 6th'
+    group_vii_e_pending_requests_5th:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 5th'
+    group_vii_e_pending_requests_4th:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 27
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 4th'
+    group_vii_e_pending_requests_3rd:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 28
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 3rd'
+    group_vii_e_pending_requests_2nd:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 29
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- 2nd'
+    group_vii_e_pending_requests_old:
+      children: {  }
+      parent_name: group_vii_e_pending_requests_ten
+      weight: 30
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VII.E. PENDING REQUESTS -- Oldest Request'
+    group_viii_a_requests_for_expedi:
+      children:
+        - field_footnotes_viiia
+        - group_xii_c_4th
+        - group_xii_c_3rd
+        - group_xii_c_2nd
+      parent_name: ''
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VIII.A. REQUESTS FOR EXPEDITED PROCESSING'
+    group_viii_b_requests_for_fee_wa:
+      children:
+        - field_footnotes_viiib
+      parent_name: ''
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'VIII.B. Requests for Fee Waiver'
+    group_ix_foia_personnel_and_cost:
+      children:
+        - group_ix_personnel
+        - group_ix_costs
+        - field_footnotes_ix
+      parent_name: ''
+      weight: 23
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'IX. FOIA Personnel and Costs'
+    group_ix_personnel:
+      children: {  }
+      parent_name: group_ix_foia_personnel_and_cost
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'IX. PERSONNEL'
+    group_ix_costs:
+      children: {  }
+      parent_name: group_ix_foia_personnel_and_cost
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'IX. COSTS'
+    group_x_fees_collected_for_proce:
+      children:
+        - field_footnotes_x
+      parent_name: ''
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'X. Fees Collected for Processing Requests'
+    group_xi_a_number_of_times_subse:
+      children:
+        - field_footnotes_xia
+      parent_name: ''
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XI.A. Number of Times Subsection (C) Used'
+    group_xi_b_number_of_subsection_:
+      children:
+        - field_footnotes_xib
+      parent_name: ''
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XI.B. Number of Subsection (A)(2) Postings'
+    group_xii_a_backlogs_of_foia_req:
+      children:
+        - field_footnotes_xiia
+      parent_name: ''
+      weight: 27
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.A. Backlogs of FOIA Requests and Administrative Appeals'
+    group_xii_b_consultations_on_foi:
+      children:
+        - field_footnotes_xiib
+      parent_name: ''
+      weight: 28
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.B. CONSULTATIONS ON FOIA REQUESTS -- RECEIVED, PROCESSED, AND PENDING CONSULTATIONS'
+    group_xii_c_consultations_on_foi:
+      children:
+        - group_xii_c_10th
+        - group_xii_c_9th
+        - group_xii_c_8th
+        - group_xii_c_7th
+        - group_xii_c_6th
+        - group_xii_c_5th
+        - group_xii_c_oldest_consultation
+        - field_footnotes_xiic
+      parent_name: ''
+      weight: 29
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY'
+    group_xii_c_10th:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 10th'
+    group_xii_c_9th:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 9th'
+    group_xii_c_8th:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 8th'
+    group_xii_c_7th:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 7th'
+    group_xii_c_6th:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 6th'
+    group_xii_c_5th:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 5th'
+    group_xii_c_4th:
+      children: {  }
+      parent_name: group_viii_a_requests_for_expedi
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 4th'
+    group_xii_c_3rd:
+      children: {  }
+      parent_name: group_viii_a_requests_for_expedi
+      weight: 27
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 3rd'
+    group_xii_c_2nd:
+      children: {  }
+      parent_name: group_viii_a_requests_for_expedi
+      weight: 28
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- 2nd'
+    group_xii_c_oldest_consultation:
+      children: {  }
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 29
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.C. -- Oldest Consultation'
+    group_xii_d_1_comparison_of_numb:
+      children:
+        - group_xiid1_num_reqs_proc
+        - group_xiid1_num_reqs_recd
+        - field_footnotes_xiid1
+      parent_name: ''
+      weight: 30
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'XII.D.(1). COMPARISON OF NUMBERS OF REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- REQUESTS RECEIVED AND PROCESSED'
+    group_xiid1_num_reqs_proc:
+      children: {  }
+      parent_name: group_xii_d_1_comparison_of_numb
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.D.(1). -- NUMBER OF REQUESTS PROCESSED'
+    group_xiid1_num_reqs_recd:
+      children: {  }
+      parent_name: group_xii_d_1_comparison_of_numb
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.D.(1). -- NUMBER OF REQUESTS RECEIVED'
+    group_xii_d_2_comparison_of_numb:
+      children:
+        - field_footnotes_xiid2
+      parent_name: ''
+      weight: 31
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.D.(2). COMPARISON OF NUMBERS OF REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED REQUESTS'
+    group_xii_e_1_comparison_of_numb:
+      children:
+        - field_footnotes_xiie1
+      parent_name: ''
+      weight: 33
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'XII.E.(1). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- APPEALS REC''D AND PROC''D'
+    group_xii_e_2_comparison_of_numb:
+      children:
+        - field_footnotes_xiie2
+      parent_name: ''
+      weight: 34
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'XII.E.(2). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED APPEALS'
 id: node.annual_foia_report_data.default
 targetEntityType: node
 bundle: annual_foia_report_data
 mode: default
 content:
-  field_foia_requests_va:
-    type: paragraphs
-    weight: 48
   field_admin_app_vic1:
-    type: paragraphs
-    weight: 8
+    type: entity_reference_paragraphs
+    weight: 26
     region: content
     settings:
       title: Paragraph
@@ -180,27 +1143,129 @@ content:
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
   field_admin_app_vic2:
-    type: paragraphs
+    type: entity_reference_paragraphs
+    weight: 15
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_admin_app_vic3:
+    type: entity_reference_paragraphs
+    weight: 24
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_admin_app_vic5:
+    type: entity_reference_paragraphs
+    weight: 33
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_agency:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_agency_components:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_date_prepared:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_foia_annual_report_yr:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_foia_requests_va:
+    type: entity_reference_paragraphs
     weight: 48
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+  field_foia_requests_vb1:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_foia_requests_vb2:
+    type: entity_reference_paragraphs
+    weight: 15
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_foia_requests_vb3:
+    type: entity_reference_paragraphs
+    weight: 20
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
   field_footnotes_iv:
     type: text_textarea
     weight: 44
-  field_footnotes_xiic:
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_ix:
     type: text_textarea
     weight: 26
     region: content
@@ -208,17 +1273,9 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_footnotes_xiid2:
-    type: text_textarea
-    weight: 44
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_footnotes_va:
     type: text_textarea
-    weight: 53
+    weight: 54
     region: content
     settings:
       rows: 5
@@ -226,10 +1283,231 @@ content:
     third_party_settings: {  }
   field_footnotes_vb1:
     type: text_textarea
-    weight: 4
+    weight: 9
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vb2:
+    type: text_textarea
+    weight: 19
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vb3:
+    type: text_textarea
+    weight: 30
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_via:
+    type: text_textarea
+    weight: 16
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vib:
+    type: text_textarea
+    weight: 44
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vic1:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vic2:
+    type: text_textarea
+    weight: 17
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vic3:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vic4:
+    type: text_textarea
+    weight: 24
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_vic5:
+    type: text_textarea
+    weight: 34
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viia:
+    type: text_textarea
+    weight: 24
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viib:
+    type: text_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viic1:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viic2:
+    type: text_textarea
+    weight: 28
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viic3:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viid:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viie:
+    type: text_textarea
+    weight: 31
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viiia:
+    type: text_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_viiib:
+    type: text_textarea
+    weight: 33
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_x:
+    type: text_textarea
+    weight: 35
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xia:
+    type: text_textarea
+    weight: 34
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xib:
+    type: text_textarea
+    weight: 37
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xiia:
+    type: text_textarea
+    weight: 38
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xiib:
+    type: text_textarea
+    weight: 39
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xiic:
+    type: text_textarea
+    weight: 30
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xiid1:
+    type: text_textarea
+    weight: 22
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xiid2:
+    type: text_textarea
+    weight: 32
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_footnotes_xiie1:
+    type: text_textarea
+    weight: 35
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_footnotes_xiie2:
     type: text_textarea
-    weight: 4
+    weight: 36
     region: content
     settings:
       rows: 5
@@ -237,7 +1515,7 @@ content:
     third_party_settings: {  }
   field_overall_req_pend_end_yr:
     type: number
-    weight: 52
+    weight: 53
     region: content
     settings:
       placeholder: ''
@@ -251,7 +1529,7 @@ content:
     third_party_settings: {  }
   field_overall_req_processed_yr:
     type: number
-    weight: 51
+    weight: 52
     region: content
     settings:
       placeholder: ''
@@ -259,6 +1537,20 @@ content:
   field_overall_req_received_yr:
     type: number
     weight: 50
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb1_dup_request:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb1_fee_related_re:
+    type: number
+    weight: 8
     region: content
     settings:
       placeholder: ''
@@ -277,9 +1569,30 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_overall_vb1_imp_req_oth_re:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_overall_vb1_no_rec:
     type: number
-    weight: 0
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb1_not_agency_rec:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb1_oth:
+    type: number
+    weight: 13
     region: content
     settings:
       placeholder: ''
@@ -291,18 +1604,123 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_overall_vb1_rec_not_desc:
+    type: number
+    weight: 9
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_overall_vb1_rec_ref_to_an_:
     type: number
-    weight: 1
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb1_req_withdrawn:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb1_total:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb2:
+    type: entity_reference_paragraphs
+    weight: 16
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_overall_vb2_total:
+    type: number
+    weight: 18
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_1:
+    type: number
+    weight: 21
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_2:
+    type: number
+    weight: 22
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_3:
+    type: number
+    weight: 23
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_4:
+    type: number
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_5:
+    type: number
+    weight: 25
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_6:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_7:
+    type: number
+    weight: 27
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_8:
+    type: number
+    weight: 28
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_vb3_ex_9:
+    type: number
+    weight: 29
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   moderation_state:
-    type: moderation_state_default
-    weight: 4
-    settings: {  }
+    type: string_textfield
+    weight: 37
     region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -314,56 +1732,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_admin_app_vic3: true
-  field_admin_app_vic5: true
-  field_foia_requests_vb1: true
-  field_foia_requests_vb2: true
-  field_foia_requests_vb3: true
-  field_footnotes_ix: true
-  field_footnotes_vb2: true
-  field_footnotes_vb3: true
-  field_footnotes_via: true
-  field_footnotes_vib: true
-  field_footnotes_vic1: true
-  field_footnotes_vic2: true
-  field_footnotes_vic3: true
-  field_footnotes_vic4: true
-  field_footnotes_vic5: true
-  field_footnotes_viia: true
-  field_footnotes_viib: true
-  field_footnotes_viic1: true
-  field_footnotes_viic2: true
-  field_footnotes_viic3: true
-  field_footnotes_viid: true
-  field_footnotes_viie: true
-  field_footnotes_viiia: true
-  field_footnotes_viiib: true
-  field_footnotes_x: true
-  field_footnotes_xia: true
-  field_footnotes_xib: true
-  field_footnotes_xiia: true
-  field_footnotes_xiib: true
-  field_footnotes_xiid1: true
-  field_footnotes_xiie1: true
-  field_overall_vb1_dup_request: true
-  field_overall_vb1_fee_related_re: true
-  field_overall_vb1_imp_req_oth_re: true
-  field_overall_vb1_not_agency_rec: true
-  field_overall_vb1_oth: true
-  field_overall_vb1_rec_not_desc: true
-  field_overall_vb1_req_withdrawn: true
-  field_overall_vb1_total: true
-  field_overall_vb2: true
-  field_overall_vb2_total: true
-  field_overall_vb3_ex_1: true
-  field_overall_vb3_ex_2: true
-  field_overall_vb3_ex_3: true
-  field_overall_vb3_ex_4: true
-  field_overall_vb3_ex_5: true
-  field_overall_vb3_ex_6: true
-  field_overall_vb3_ex_7: true
-  field_overall_vb3_ex_8: true
-  field_overall_vb3_ex_9: true
   path: true
   promote: true
   status: true
