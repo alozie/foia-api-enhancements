@@ -119,6 +119,26 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vic4_high_num_days
     - field.field.node.annual_foia_report_data.field_overall_vic4_low_num_days
     - field.field.node.annual_foia_report_data.field_overall_vic4_med_num_days
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_1
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_10
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_2
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_3
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_4
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_5
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_6
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_7
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_8
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_9
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_1
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_10
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_2
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_3
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_4
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_5
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_6
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_7
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_8
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_9
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -1125,6 +1145,146 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
+  field_overall_vic5_date_1:
+    weight: 139
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_10:
+    weight: 129
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_2:
+    weight: 121
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_3:
+    weight: 122
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_4:
+    weight: 123
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_5:
+    weight: 124
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_6:
+    weight: 125
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_7:
+    weight: 126
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_8:
+    weight: 127
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_date_9:
+    weight: 128
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_1:
+    weight: 140
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_10:
+    weight: 138
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_2:
+    weight: 130
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_3:
+    weight: 131
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_4:
+    weight: 132
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_5:
+    weight: 133
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_6:
+    weight: 134
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_7:
+    weight: 135
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_8:
+    weight: 136
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_vic5_num_day_9:
+    weight: 137
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 1

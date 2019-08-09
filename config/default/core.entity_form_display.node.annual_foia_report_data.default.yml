@@ -119,6 +119,26 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vic4_high_num_days
     - field.field.node.annual_foia_report_data.field_overall_vic4_low_num_days
     - field.field.node.annual_foia_report_data.field_overall_vic4_med_num_days
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_1
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_10
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_2
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_3
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_4
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_5
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_6
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_7
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_8
+    - field.field.node.annual_foia_report_data.field_overall_vic5_date_9
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_1
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_10
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_2
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_3
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_4
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_5
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_6
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_7
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_8
+    - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_9
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -415,7 +435,9 @@ third_party_settings:
         direction: vertical
       label: 'VI.C.(5). TEN OLDEST PENDING ADMINISTRATIVE APPEALS'
     group_vi_c_5_10th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_10
+        - field_overall_vic5_num_day_10
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 34
       format_type: tab
@@ -427,7 +449,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 10th'
     group_vi_c_5_9th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_9
+        - field_overall_vic5_num_day_9
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 35
       format_type: tab
@@ -439,7 +463,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 9th'
     group_vi_c_5_8th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_8
+        - field_overall_vic5_num_day_8
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 36
       format_type: tab
@@ -451,7 +477,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 8th'
     group_vi_c_5_7th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_7
+        - field_overall_vic5_num_day_7
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 37
       format_type: tab
@@ -463,7 +491,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 7th'
     group_vi_c_5_6th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_6
+        - field_overall_vic5_num_day_6
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 38
       format_type: tab
@@ -475,7 +505,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 6th'
     group_vi_c_5_5th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_5
+        - field_overall_vic5_num_day_5
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 39
       format_type: tab
@@ -487,7 +519,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 5th'
     group_vi_c_5_4th:
-      children: {  }
+      children:
+        - field_overall_vic5_date_4
+        - field_overall_vic5_num_day_4
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 40
       format_type: tab
@@ -499,7 +533,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 4th'
     group_vi_c_5_3rd:
-      children: {  }
+      children:
+        - field_overall_vic5_date_3
+        - field_overall_vic5_num_day_3
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 41
       format_type: tab
@@ -511,7 +547,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 3rd'
     group_vi_c_5_2nd:
-      children: {  }
+      children:
+        - field_overall_vic5_date_2
+        - field_overall_vic5_num_day_2
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 42
       format_type: tab
@@ -523,7 +561,9 @@ third_party_settings:
         required_fields: true
       label: 'VI.C.(5). -- 2nd'
     group_vi_c_5_oldest_appeal:
-      children: {  }
+      children:
+        - field_overall_vic5_date_1
+        - field_overall_vic5_num_day_1
       parent_name: group_vi_c_5_ten_oldest_pending_
       weight: 43
       format_type: tab
@@ -563,7 +603,7 @@ third_party_settings:
     group_vii_a_foia_requests_comple:
       children: {  }
       parent_name: group_vii_a_foia_requests_respon
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -575,7 +615,7 @@ third_party_settings:
     group_vii_a_foia_requests_expedi:
       children: {  }
       parent_name: group_vii_a_foia_requests_respon
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -601,7 +641,7 @@ third_party_settings:
     group_vii_b_processed_requests_s:
       children: {  }
       parent_name: group_vii_b_processed_requests_r
-      weight: 20
+      weight: 21
       format_type: tab
       format_settings:
         id: ''
@@ -651,7 +691,7 @@ third_party_settings:
       children:
         - field_footnotes_viic2
       parent_name: ''
-      weight: 17
+      weight: 18
       format_type: tab
       format_settings:
         id: ''
@@ -664,7 +704,7 @@ third_party_settings:
       children:
         - field_footnotes_viic3
       parent_name: ''
-      weight: 18
+      weight: 19
       format_type: tab
       format_settings:
         id: ''
@@ -680,7 +720,7 @@ third_party_settings:
         - group_vii_d_pending_requests_exp
         - field_footnotes_viid
       parent_name: ''
-      weight: 19
+      weight: 20
       format_type: tabs
       format_settings:
         id: ''
@@ -738,7 +778,7 @@ third_party_settings:
         - group_vii_e_pending_requests_old
         - field_footnotes_viie
       parent_name: ''
-      weight: 20
+      weight: 21
       format_type: tabs
       format_settings:
         id: ''
@@ -808,7 +848,7 @@ third_party_settings:
     group_vii_e_pending_requests_5th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 26
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -820,7 +860,7 @@ third_party_settings:
     group_vii_e_pending_requests_4th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 27
+      weight: 28
       format_type: tab
       format_settings:
         id: ''
@@ -832,7 +872,7 @@ third_party_settings:
     group_vii_e_pending_requests_3rd:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 28
+      weight: 29
       format_type: tab
       format_settings:
         id: ''
@@ -844,7 +884,7 @@ third_party_settings:
     group_vii_e_pending_requests_2nd:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 29
+      weight: 30
       format_type: tab
       format_settings:
         id: ''
@@ -856,7 +896,7 @@ third_party_settings:
     group_vii_e_pending_requests_old:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 30
+      weight: 31
       format_type: tab
       format_settings:
         id: ''
@@ -872,7 +912,7 @@ third_party_settings:
         - group_xii_c_3rd
         - group_xii_c_2nd
       parent_name: ''
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -885,7 +925,7 @@ third_party_settings:
       children:
         - field_footnotes_viiib
       parent_name: ''
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -900,7 +940,7 @@ third_party_settings:
         - group_ix_costs
         - field_footnotes_ix
       parent_name: ''
-      weight: 23
+      weight: 24
       format_type: tabs
       format_settings:
         id: ''
@@ -935,7 +975,7 @@ third_party_settings:
       children:
         - field_footnotes_x
       parent_name: ''
-      weight: 24
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -948,7 +988,7 @@ third_party_settings:
       children:
         - field_footnotes_xia
       parent_name: ''
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -961,7 +1001,7 @@ third_party_settings:
       children:
         - field_footnotes_xib
       parent_name: ''
-      weight: 26
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -974,7 +1014,7 @@ third_party_settings:
       children:
         - field_footnotes_xiia
       parent_name: ''
-      weight: 27
+      weight: 28
       format_type: tab
       format_settings:
         id: ''
@@ -987,7 +1027,7 @@ third_party_settings:
       children:
         - field_footnotes_xiib
       parent_name: ''
-      weight: 28
+      weight: 29
       format_type: tab
       format_settings:
         id: ''
@@ -1007,7 +1047,7 @@ third_party_settings:
         - group_xii_c_oldest_consultation
         - field_footnotes_xiic
       parent_name: ''
-      weight: 29
+      weight: 30
       format_type: tabs
       format_settings:
         id: ''
@@ -1029,7 +1069,7 @@ third_party_settings:
     group_xii_c_9th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -1041,7 +1081,7 @@ third_party_settings:
     group_xii_c_8th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -1053,7 +1093,7 @@ third_party_settings:
     group_xii_c_7th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 23
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -1065,7 +1105,7 @@ third_party_settings:
     group_xii_c_6th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 24
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -1077,7 +1117,7 @@ third_party_settings:
     group_xii_c_5th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -1125,7 +1165,7 @@ third_party_settings:
     group_xii_c_oldest_consultation:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 26
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -1140,7 +1180,7 @@ third_party_settings:
         - group_xiid1_num_reqs_recd
         - field_footnotes_xiid1
       parent_name: ''
-      weight: 30
+      weight: 31
       format_type: tabs
       format_settings:
         id: ''
@@ -1162,7 +1202,7 @@ third_party_settings:
     group_xiid1_num_reqs_recd:
       children: {  }
       parent_name: group_xii_d_1_comparison_of_numb
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -1175,7 +1215,7 @@ third_party_settings:
       children:
         - field_footnotes_xiid2
       parent_name: ''
-      weight: 31
+      weight: 32
       format_type: tab
       format_settings:
         id: ''
@@ -1188,7 +1228,7 @@ third_party_settings:
       children:
         - field_footnotes_xiie1
       parent_name: ''
-      weight: 32
+      weight: 33
       format_type: tabs
       format_settings:
         id: ''
@@ -1199,7 +1239,7 @@ third_party_settings:
       children:
         - field_footnotes_xiie2
       parent_name: ''
-      weight: 33
+      weight: 34
       format_type: tab
       format_settings:
         id: ''
@@ -1505,7 +1545,7 @@ content:
     third_party_settings: {  }
   field_footnotes_vic5:
     type: text_textarea
-    weight: 44
+    weight: 45
     region: content
     settings:
       rows: 5
@@ -1561,7 +1601,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viie:
     type: text_textarea
-    weight: 31
+    weight: 32
     region: content
     settings:
       rows: 5
@@ -2152,9 +2192,169 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  field_overall_vic5_date_1:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_10:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_2:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_3:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_4:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_5:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_6:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_7:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_8:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_date_9:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_1:
+    weight: 45
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_10:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_2:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_3:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_4:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_5:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_6:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_7:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_8:
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_vic5_num_day_9:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
   moderation_state:
     type: string_textfield
-    weight: 34
+    weight: 35
     region: content
     settings:
       size: 60
