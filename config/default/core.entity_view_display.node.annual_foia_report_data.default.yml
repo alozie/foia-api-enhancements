@@ -214,6 +214,26 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_viid_sim_avg
     - field.field.node.annual_foia_report_data.field_overall_viid_sim_med
     - field.field.node.annual_foia_report_data.field_overall_viid_sim_pend
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_1
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_10
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_2
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_3
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_4
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_5
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_6
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_7
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_8
+    - field.field.node.annual_foia_report_data.field_overall_viie_date_9
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_1
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_10
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_2
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_3
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_4
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_5
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_6
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_7
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_8
+    - field.field.node.annual_foia_report_data.field_overall_viie_num_days_9
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -1965,6 +1985,146 @@ content:
     region: content
   field_overall_viid_sim_pend:
     weight: 208
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_1:
+    weight: 236
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_10:
+    weight: 218
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_2:
+    weight: 234
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_3:
+    weight: 232
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_4:
+    weight: 230
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_5:
+    weight: 228
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_6:
+    weight: 226
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_7:
+    weight: 224
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_8:
+    weight: 222
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_date_9:
+    weight: 220
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_1:
+    weight: 237
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_10:
+    weight: 219
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_2:
+    weight: 235
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_3:
+    weight: 233
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_4:
+    weight: 231
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_5:
+    weight: 229
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_6:
+    weight: 227
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_7:
+    weight: 225
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_8:
+    weight: 223
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_overall_viie_num_days_9:
+    weight: 221
     label: above
     settings: {  }
     third_party_settings: {  }
