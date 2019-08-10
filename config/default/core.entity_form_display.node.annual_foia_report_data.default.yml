@@ -139,6 +139,81 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_7
     - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_8
     - field.field.node.annual_foia_report_data.field_overall_vic5_num_day_9
+    - field.field.node.annual_foia_report_data.field_overall_viia_comp_avg
+    - field.field.node.annual_foia_report_data.field_overall_viia_comp_high
+    - field.field.node.annual_foia_report_data.field_overall_viia_comp_low
+    - field.field.node.annual_foia_report_data.field_overall_viia_comp_med
+    - field.field.node.annual_foia_report_data.field_overall_viia_exp_avg
+    - field.field.node.annual_foia_report_data.field_overall_viia_exp_high
+    - field.field.node.annual_foia_report_data.field_overall_viia_exp_low
+    - field.field.node.annual_foia_report_data.field_overall_viia_exp_med
+    - field.field.node.annual_foia_report_data.field_overall_viia_sim_avg
+    - field.field.node.annual_foia_report_data.field_overall_viia_sim_high
+    - field.field.node.annual_foia_report_data.field_overall_viia_sim_low
+    - field.field.node.annual_foia_report_data.field_overall_viia_sim_med
+    - field.field.node.annual_foia_report_data.field_overall_viib_comp_avg
+    - field.field.node.annual_foia_report_data.field_overall_viib_comp_high
+    - field.field.node.annual_foia_report_data.field_overall_viib_comp_low
+    - field.field.node.annual_foia_report_data.field_overall_viib_comp_med
+    - field.field.node.annual_foia_report_data.field_overall_viib_exp_avg
+    - field.field.node.annual_foia_report_data.field_overall_viib_exp_high
+    - field.field.node.annual_foia_report_data.field_overall_viib_exp_low
+    - field.field.node.annual_foia_report_data.field_overall_viib_exp_med
+    - field.field.node.annual_foia_report_data.field_overall_viib_sim_avg
+    - field.field.node.annual_foia_report_data.field_overall_viib_sim_high
+    - field.field.node.annual_foia_report_data.field_overall_viib_sim_low
+    - field.field.node.annual_foia_report_data.field_overall_viib_sim_med
+    - field.field.node.annual_foia_report_data.field_overall_viic1_101_120_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_121_140_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_141_160_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_161_180_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_181_200_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_1_20_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_201_300_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_21_40_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_301_400_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_400_up_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_41_60_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_61_80_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_81_100_days
+    - field.field.node.annual_foia_report_data.field_overall_viic1_total
+    - field.field.node.annual_foia_report_data.field_overall_viic2_101_120_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_121_140_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_141_160_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_161_180_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_181_200_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_1_20_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_201_300_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_21_40_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_301_400_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_400_up_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_41_60_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_61_80_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_81_100_days
+    - field.field.node.annual_foia_report_data.field_overall_viic2_total
+    - field.field.node.annual_foia_report_data.field_overall_viic3_101_120_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_121_140_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_141_160_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_161_180_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_181_200_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_1_20_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_201_300_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_21_40_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_301_400_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_400_up_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_41_60_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_61_80_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_81_100_days
+    - field.field.node.annual_foia_report_data.field_overall_viic3_total
+    - field.field.node.annual_foia_report_data.field_overall_viid_comp_avg
+    - field.field.node.annual_foia_report_data.field_overall_viid_comp_med
+    - field.field.node.annual_foia_report_data.field_overall_viid_comp_pend
+    - field.field.node.annual_foia_report_data.field_overall_viid_exp_avg
+    - field.field.node.annual_foia_report_data.field_overall_viid_exp_med
+    - field.field.node.annual_foia_report_data.field_overall_viid_exp_pend
+    - field.field.node.annual_foia_report_data.field_overall_viid_sim_avg
+    - field.field.node.annual_foia_report_data.field_overall_viid_sim_med
+    - field.field.node.annual_foia_report_data.field_overall_viid_sim_pend
     - node.type.annual_foia_report_data
   module:
     - datetime
@@ -589,7 +664,11 @@ third_party_settings:
         direction: vertical
       label: 'VII.A. FOIA REQUESTS -- RESPONSE TIME FOR ALL PROCESSED PERFECTED REQUESTS'
     group_vii_a_foia_requests_simple:
-      children: {  }
+      children:
+        - field_overall_viia_sim_med
+        - field_overall_viia_sim_avg
+        - field_overall_viia_sim_low
+        - field_overall_viia_sim_high
       parent_name: group_vii_a_foia_requests_respon
       weight: 20
       format_type: tab
@@ -601,9 +680,13 @@ third_party_settings:
         required_fields: true
       label: 'VII.A. FOIA REQUESTS -- Simple'
     group_vii_a_foia_requests_comple:
-      children: {  }
+      children:
+        - field_overall_viia_comp_med
+        - field_overall_viia_comp_avg
+        - field_overall_viia_comp_low
+        - field_overall_viia_comp_high
       parent_name: group_vii_a_foia_requests_respon
-      weight: 22
+      weight: 21
       format_type: tab
       format_settings:
         id: ''
@@ -613,9 +696,13 @@ third_party_settings:
         required_fields: true
       label: 'VII.A. FOIA REQUESTS -- Complex'
     group_vii_a_foia_requests_expedi:
-      children: {  }
+      children:
+        - field_overall_viia_exp_med
+        - field_overall_viia_exp_avg
+        - field_overall_viia_exp_low
+        - field_overall_viia_exp_high
       parent_name: group_vii_a_foia_requests_respon
-      weight: 23
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -639,9 +726,13 @@ third_party_settings:
         direction: vertical
       label: 'VII.B. PROCESSED REQUESTS -- RESPONSE TIME FOR PERFECTED REQUESTS IN WHICH INFORMATION WAS GRANTED'
     group_vii_b_processed_requests_s:
-      children: {  }
+      children:
+        - field_overall_viib_sim_med
+        - field_overall_viib_sim_avg
+        - field_overall_viib_sim_low
+        - field_overall_viib_sim_high
       parent_name: group_vii_b_processed_requests_r
-      weight: 21
+      weight: 37
       format_type: tab
       format_settings:
         id: ''
@@ -651,9 +742,13 @@ third_party_settings:
         required_fields: true
       label: 'VII.B. PROCESSED REQUESTS -- Simple'
     group_vii_b_processed_requests_c:
-      children: {  }
+      children:
+        - field_overall_viib_comp_med
+        - field_overall_viib_comp_avg
+        - field_overall_viib_comp_low
+        - field_overall_viib_comp_high
       parent_name: group_vii_b_processed_requests_r
-      weight: 22
+      weight: 38
       format_type: tab
       format_settings:
         id: ''
@@ -663,9 +758,13 @@ third_party_settings:
         required_fields: true
       label: 'VII.B. PROCESSED REQUESTS -- Complex'
     group_vii_b_processed_requests_e:
-      children: {  }
+      children:
+        - field_overall_viib_exp_med
+        - field_overall_viib_exp_avg
+        - field_overall_viib_exp_low
+        - field_overall_viib_exp_high
       parent_name: group_vii_b_processed_requests_r
-      weight: 23
+      weight: 39
       format_type: tab
       format_settings:
         id: ''
@@ -676,6 +775,20 @@ third_party_settings:
       label: 'VII.B. PROCESSED REQUESTS -- Expedited Processing'
     group_vii_c_1_processed_simple_r:
       children:
+        - field_overall_viic1_1_20_days
+        - field_overall_viic1_21_40_days
+        - field_overall_viic1_41_60_days
+        - field_overall_viic1_61_80_days
+        - field_overall_viic1_81_100_days
+        - field_overall_viic1_101_120_days
+        - field_overall_viic1_121_140_days
+        - field_overall_viic1_141_160_days
+        - field_overall_viic1_161_180_days
+        - field_overall_viic1_181_200_days
+        - field_overall_viic1_201_300_days
+        - field_overall_viic1_301_400_days
+        - field_overall_viic1_400_up_days
+        - field_overall_viic1_total
         - field_footnotes_viic1
       parent_name: ''
       weight: 16
@@ -689,9 +802,23 @@ third_party_settings:
       label: 'VII.C.1 PROCESSED SIMPLE REQUESTS -- RESPONSE TIME IN DAY INCREMENTS'
     group_vii_c_2_processed_complex_:
       children:
+        - field_overall_viic2_1_20_days
+        - field_overall_viic2_21_40_days
+        - field_overall_viic2_41_60_days
+        - field_overall_viic2_61_80_days
+        - field_overall_viic2_81_100_days
+        - field_overall_viic2_101_120_days
+        - field_overall_viic2_121_140_days
+        - field_overall_viic2_141_160_days
+        - field_overall_viic2_161_180_days
+        - field_overall_viic2_181_200_days
+        - field_overall_viic2_201_300_days
+        - field_overall_viic2_301_400_days
+        - field_overall_viic2_400_up_days
+        - field_overall_viic2_total
         - field_footnotes_viic2
       parent_name: ''
-      weight: 18
+      weight: 17
       format_type: tab
       format_settings:
         id: ''
@@ -702,9 +829,23 @@ third_party_settings:
       label: 'VII.C.2 PROCESSED COMPLEX REQUESTS -- RESPONSE TIME IN DAY INCREMENTS '
     group_vii_c_3_processed_requests:
       children:
+        - field_overall_viic3_1_20_days
+        - field_overall_viic3_21_40_days
+        - field_overall_viic3_41_60_days
+        - field_overall_viic3_61_80_days
+        - field_overall_viic3_81_100_days
+        - field_overall_viic3_101_120_days
+        - field_overall_viic3_121_140_days
+        - field_overall_viic3_141_160_days
+        - field_overall_viic3_161_180_days
+        - field_overall_viic3_181_200_days
+        - field_overall_viic3_201_300_days
+        - field_overall_viic3_301_400_days
+        - field_overall_viic3_400_up_days
+        - field_overall_viic3_total
         - field_footnotes_viic3
       parent_name: ''
-      weight: 19
+      weight: 18
       format_type: tab
       format_settings:
         id: ''
@@ -720,7 +861,7 @@ third_party_settings:
         - group_vii_d_pending_requests_exp
         - field_footnotes_viid
       parent_name: ''
-      weight: 20
+      weight: 19
       format_type: tabs
       format_settings:
         id: ''
@@ -728,9 +869,12 @@ third_party_settings:
         direction: vertical
       label: 'VII.D. PENDING REQUESTS -- ALL PENDING PERFECTED REQUESTS'
     group_vii_d_pending_requests_exp:
-      children: {  }
+      children:
+        - field_overall_viid_exp_pend
+        - field_overall_viid_exp_med
+        - field_overall_viid_exp_avg
       parent_name: group_vii_d_pending_requests_all
-      weight: 28
+      weight: 30
       format_type: tab
       format_settings:
         id: ''
@@ -740,9 +884,12 @@ third_party_settings:
         required_fields: true
       label: 'VII.D. PENDING REQUESTS -- Expedited Processing'
     group_vii_d_pending_requests_sim:
-      children: {  }
+      children:
+        - field_overall_viid_sim_pend
+        - field_overall_viid_sim_med
+        - field_overall_viid_sim_avg
       parent_name: group_vii_d_pending_requests_all
-      weight: 26
+      weight: 28
       format_type: tab
       format_settings:
         id: ''
@@ -752,9 +899,12 @@ third_party_settings:
         required_fields: true
       label: 'VII.D. PENDING REQUESTS -- Simple'
     group_vii_d_pending_requests_com:
-      children: {  }
+      children:
+        - field_overall_viid_comp_pend
+        - field_overall_viid_comp_med
+        - field_overall_viid_comp_avg
       parent_name: group_vii_d_pending_requests_all
-      weight: 27
+      weight: 29
       format_type: tab
       format_settings:
         id: ''
@@ -765,7 +915,6 @@ third_party_settings:
       label: 'VII.D. PENDING REQUESTS -- Complex'
     group_vii_e_pending_requests_ten:
       children:
-        - group_xiie1_num_appeals_proc
         - group_vii_e_pending_requests_10t
         - group_vii_e_pending_requests_9th
         - group_vii_e_pending_requests_8th
@@ -778,7 +927,7 @@ third_party_settings:
         - group_vii_e_pending_requests_old
         - field_footnotes_viie
       parent_name: ''
-      weight: 21
+      weight: 20
       format_type: tabs
       format_settings:
         id: ''
@@ -788,7 +937,7 @@ third_party_settings:
     group_vii_e_pending_requests_10t:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 21
+      weight: 30
       format_type: tab
       format_settings:
         id: ''
@@ -800,7 +949,7 @@ third_party_settings:
     group_vii_e_pending_requests_9th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 22
+      weight: 32
       format_type: tab
       format_settings:
         id: ''
@@ -812,7 +961,7 @@ third_party_settings:
     group_vii_e_pending_requests_8th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 23
+      weight: 33
       format_type: tab
       format_settings:
         id: ''
@@ -824,7 +973,7 @@ third_party_settings:
     group_vii_e_pending_requests_7th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 24
+      weight: 34
       format_type: tab
       format_settings:
         id: ''
@@ -836,7 +985,7 @@ third_party_settings:
     group_vii_e_pending_requests_6th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 25
+      weight: 35
       format_type: tab
       format_settings:
         id: ''
@@ -848,7 +997,7 @@ third_party_settings:
     group_vii_e_pending_requests_5th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 27
+      weight: 36
       format_type: tab
       format_settings:
         id: ''
@@ -860,7 +1009,7 @@ third_party_settings:
     group_vii_e_pending_requests_4th:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 28
+      weight: 37
       format_type: tab
       format_settings:
         id: ''
@@ -872,7 +1021,7 @@ third_party_settings:
     group_vii_e_pending_requests_3rd:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 29
+      weight: 38
       format_type: tab
       format_settings:
         id: ''
@@ -884,7 +1033,7 @@ third_party_settings:
     group_vii_e_pending_requests_2nd:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 30
+      weight: 39
       format_type: tab
       format_settings:
         id: ''
@@ -896,7 +1045,7 @@ third_party_settings:
     group_vii_e_pending_requests_old:
       children: {  }
       parent_name: group_vii_e_pending_requests_ten
-      weight: 31
+      weight: 40
       format_type: tab
       format_settings:
         id: ''
@@ -908,11 +1057,8 @@ third_party_settings:
     group_viii_a_requests_for_expedi:
       children:
         - field_footnotes_viiia
-        - group_xii_c_4th
-        - group_xii_c_3rd
-        - group_xii_c_2nd
       parent_name: ''
-      weight: 22
+      weight: 21
       format_type: tab
       format_settings:
         id: ''
@@ -925,7 +1071,7 @@ third_party_settings:
       children:
         - field_footnotes_viiib
       parent_name: ''
-      weight: 23
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -940,7 +1086,7 @@ third_party_settings:
         - group_ix_costs
         - field_footnotes_ix
       parent_name: ''
-      weight: 24
+      weight: 23
       format_type: tabs
       format_settings:
         id: ''
@@ -950,7 +1096,7 @@ third_party_settings:
     group_ix_personnel:
       children: {  }
       parent_name: group_ix_foia_personnel_and_cost
-      weight: 24
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -962,7 +1108,7 @@ third_party_settings:
     group_ix_costs:
       children: {  }
       parent_name: group_ix_foia_personnel_and_cost
-      weight: 25
+      weight: 28
       format_type: tab
       format_settings:
         id: ''
@@ -973,9 +1119,10 @@ third_party_settings:
       label: 'IX. COSTS'
     group_x_fees_collected_for_proce:
       children:
+        - group_xii_c_4th
         - field_footnotes_x
       parent_name: ''
-      weight: 25
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -988,7 +1135,7 @@ third_party_settings:
       children:
         - field_footnotes_xia
       parent_name: ''
-      weight: 26
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -1001,7 +1148,7 @@ third_party_settings:
       children:
         - field_footnotes_xib
       parent_name: ''
-      weight: 27
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -1014,7 +1161,7 @@ third_party_settings:
       children:
         - field_footnotes_xiia
       parent_name: ''
-      weight: 28
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -1027,7 +1174,7 @@ third_party_settings:
       children:
         - field_footnotes_xiib
       parent_name: ''
-      weight: 29
+      weight: 28
       format_type: tab
       format_settings:
         id: ''
@@ -1044,10 +1191,12 @@ third_party_settings:
         - group_xii_c_7th
         - group_xii_c_6th
         - group_xii_c_5th
+        - group_xii_c_3rd
+        - group_xii_c_2nd
         - group_xii_c_oldest_consultation
         - field_footnotes_xiic
       parent_name: ''
-      weight: 30
+      weight: 29
       format_type: tabs
       format_settings:
         id: ''
@@ -1069,7 +1218,7 @@ third_party_settings:
     group_xii_c_9th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 22
+      weight: 21
       format_type: tab
       format_settings:
         id: ''
@@ -1081,7 +1230,7 @@ third_party_settings:
     group_xii_c_8th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 23
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -1093,7 +1242,7 @@ third_party_settings:
     group_xii_c_7th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 24
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -1105,7 +1254,7 @@ third_party_settings:
     group_xii_c_6th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 25
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -1117,7 +1266,7 @@ third_party_settings:
     group_xii_c_5th:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 26
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -1128,8 +1277,8 @@ third_party_settings:
       label: 'XII.C. -- 5th'
     group_xii_c_4th:
       children: {  }
-      parent_name: group_viii_a_requests_for_expedi
-      weight: 26
+      parent_name: group_x_fees_collected_for_proce
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -1140,8 +1289,8 @@ third_party_settings:
       label: 'XII.C. -- 4th'
     group_xii_c_3rd:
       children: {  }
-      parent_name: group_viii_a_requests_for_expedi
-      weight: 27
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -1152,8 +1301,8 @@ third_party_settings:
       label: 'XII.C. -- 3rd'
     group_xii_c_2nd:
       children: {  }
-      parent_name: group_viii_a_requests_for_expedi
-      weight: 28
+      parent_name: group_xii_c_consultations_on_foi
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -1165,7 +1314,7 @@ third_party_settings:
     group_xii_c_oldest_consultation:
       children: {  }
       parent_name: group_xii_c_consultations_on_foi
-      weight: 27
+      weight: 29
       format_type: tab
       format_settings:
         id: ''
@@ -1180,7 +1329,7 @@ third_party_settings:
         - group_xiid1_num_reqs_recd
         - field_footnotes_xiid1
       parent_name: ''
-      weight: 31
+      weight: 30
       format_type: tabs
       format_settings:
         id: ''
@@ -1190,7 +1339,7 @@ third_party_settings:
     group_xiid1_num_reqs_proc:
       children: {  }
       parent_name: group_xii_d_1_comparison_of_numb
-      weight: 20
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -1202,7 +1351,7 @@ third_party_settings:
     group_xiid1_num_reqs_recd:
       children: {  }
       parent_name: group_xii_d_1_comparison_of_numb
-      weight: 22
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -1215,7 +1364,7 @@ third_party_settings:
       children:
         - field_footnotes_xiid2
       parent_name: ''
-      weight: 32
+      weight: 31
       format_type: tab
       format_settings:
         id: ''
@@ -1226,9 +1375,11 @@ third_party_settings:
       label: 'XII.D.(2). COMPARISON OF NUMBERS OF REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED REQUESTS'
     group_xii_e_1_comparison_of_numb:
       children:
+        - group_xiie1_num_appeals_recd
+        - group_xiie1_num_appeals_proc
         - field_footnotes_xiie1
       parent_name: ''
-      weight: 33
+      weight: 32
       format_type: tabs
       format_settings:
         id: ''
@@ -1250,8 +1401,8 @@ third_party_settings:
       label: 'XII.E.(2). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED APPEALS'
     group_xiie1_num_appeals_recd:
       children: {  }
-      parent_name: group_xiie1_num_appeals_proc
-      weight: 20
+      parent_name: group_xii_e_1_comparison_of_numb
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -1261,10 +1412,9 @@ third_party_settings:
         required_fields: true
       label: 'XII.E.(1). -- NUMBER OF APPEALS RECEIVED'
     group_xiie1_num_appeals_proc:
-      children:
-        - group_xiie1_num_appeals_recd
-      parent_name: group_vii_e_pending_requests_ten
-      weight: 20
+      children: {  }
+      parent_name: group_xii_e_1_comparison_of_numb
+      weight: 27
       format_type: tab
       format_settings:
         id: ''
@@ -1457,7 +1607,7 @@ content:
     third_party_settings: {  }
   field_footnotes_ix:
     type: text_textarea
-    weight: 26
+    weight: 29
     region: content
     settings:
       rows: 5
@@ -1553,7 +1703,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viia:
     type: text_textarea
-    weight: 24
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -1561,7 +1711,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viib:
     type: text_textarea
-    weight: 24
+    weight: 40
     region: content
     settings:
       rows: 5
@@ -1569,7 +1719,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viic1:
     type: text_textarea
-    weight: 27
+    weight: 49
     region: content
     settings:
       rows: 5
@@ -1577,7 +1727,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viic2:
     type: text_textarea
-    weight: 28
+    weight: 95
     region: content
     settings:
       rows: 5
@@ -1585,7 +1735,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viic3:
     type: text_textarea
-    weight: 29
+    weight: 110
     region: content
     settings:
       rows: 5
@@ -1593,7 +1743,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viid:
     type: text_textarea
-    weight: 29
+    weight: 31
     region: content
     settings:
       rows: 5
@@ -1601,7 +1751,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viie:
     type: text_textarea
-    weight: 32
+    weight: 41
     region: content
     settings:
       rows: 5
@@ -1617,7 +1767,7 @@ content:
     third_party_settings: {  }
   field_footnotes_viiib:
     type: text_textarea
-    weight: 33
+    weight: 27
     region: content
     settings:
       rows: 5
@@ -1625,7 +1775,7 @@ content:
     third_party_settings: {  }
   field_footnotes_x:
     type: text_textarea
-    weight: 35
+    weight: 26
     region: content
     settings:
       rows: 5
@@ -1665,7 +1815,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiic:
     type: text_textarea
-    weight: 28
+    weight: 30
     region: content
     settings:
       rows: 5
@@ -1673,7 +1823,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiid1:
     type: text_textarea
-    weight: 23
+    weight: 25
     region: content
     settings:
       rows: 5
@@ -1681,7 +1831,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiid2:
     type: text_textarea
-    weight: 32
+    weight: 31
     region: content
     settings:
       rows: 5
@@ -1689,7 +1839,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiie1:
     type: text_textarea
-    weight: 36
+    weight: 28
     region: content
     settings:
       rows: 5
@@ -1697,7 +1847,7 @@ content:
     third_party_settings: {  }
   field_footnotes_xiie2:
     type: text_textarea
-    weight: 35
+    weight: 39
     region: content
     settings:
       rows: 5
@@ -2346,6 +2496,564 @@ content:
     region: content
   field_overall_vic5_num_day_9:
     weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_comp_avg:
+    weight: 62
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_comp_high:
+    weight: 64
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_comp_low:
+    weight: 63
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_comp_med:
+    weight: 61
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_exp_avg:
+    weight: 66
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_exp_high:
+    weight: 68
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_exp_low:
+    weight: 67
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_exp_med:
+    weight: 65
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_sim_avg:
+    weight: 58
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_sim_high:
+    weight: 60
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_sim_low:
+    weight: 59
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viia_sim_med:
+    weight: 57
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_comp_avg:
+    weight: 74
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_comp_high:
+    weight: 76
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_comp_low:
+    weight: 75
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_comp_med:
+    weight: 73
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_exp_avg:
+    weight: 78
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_exp_high:
+    weight: 80
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_exp_low:
+    type: text_textfield
+    weight: 79
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_viib_exp_med:
+    weight: 77
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_sim_avg:
+    weight: 70
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_sim_high:
+    weight: 72
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_sim_low:
+    weight: 71
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viib_sim_med:
+    weight: 69
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viic1_101_120_days:
+    weight: 40
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_121_140_days:
+    weight: 41
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_141_160_days:
+    weight: 42
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_161_180_days:
+    weight: 43
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_181_200_days:
+    weight: 44
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_1_20_days:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_201_300_days:
+    weight: 45
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_21_40_days:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_301_400_days:
+    weight: 46
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_400_up_days:
+    weight: 47
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_41_60_days:
+    weight: 37
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_61_80_days:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_81_100_days:
+    weight: 39
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic1_total:
+    weight: 48
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_101_120_days:
+    weight: 86
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_121_140_days:
+    weight: 87
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_141_160_days:
+    weight: 88
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_161_180_days:
+    weight: 89
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_181_200_days:
+    weight: 90
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_1_20_days:
+    weight: 81
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_201_300_days:
+    weight: 91
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_21_40_days:
+    weight: 82
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_301_400_days:
+    weight: 92
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_400_up_days:
+    weight: 93
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_41_60_days:
+    weight: 83
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_61_80_days:
+    weight: 84
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_81_100_days:
+    weight: 85
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic2_total:
+    weight: 94
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_101_120_days:
+    weight: 101
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_121_140_days:
+    weight: 102
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_141_160_days:
+    weight: 103
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_161_180_days:
+    weight: 104
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_181_200_days:
+    weight: 105
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_1_20_days:
+    weight: 96
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_201_300_days:
+    weight: 106
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_21_40_days:
+    weight: 97
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_301_400_days:
+    weight: 107
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_400_up_days:
+    weight: 108
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_41_60_days:
+    weight: 98
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_61_80_days:
+    weight: 99
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_81_100_days:
+    weight: 100
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viic3_total:
+    weight: 109
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_overall_viid_comp_avg:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viid_comp_med:
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viid_comp_pend:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viid_exp_avg:
+    type: text_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_viid_exp_med:
+    type: text_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_viid_exp_pend:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_overall_viid_sim_avg:
+    weight: 113
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viid_sim_med:
+    weight: 112
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_overall_viid_sim_pend:
+    weight: 111
     settings:
       size: 60
       placeholder: ''
