@@ -116,6 +116,60 @@
 
           // Fields from IX and X to calculate field_perc_costs per agency.
           //FOIA Personnel and Costs IX. proc_costs / Fees X. total_fees  = Fees X. perc_costs
+          var ix_section = $('a[href="#edit-group-ix-foia-personnel-cost-wra"]');
+          ix_section.click(function() {
+              $( "input[name*='field_foia_pers_costs_ix']").filter("input[name*='field_proc_costs']").each(function() {
+                  console.log(this);
+                  // Get all IX sections.
+                  // For each IX section create .change function on proc_costs field.
+                  this.onchange(function(){
+                      var proc_costs_val = this.val();
+                      console.log(proc_costs_val);
+                  });
+              });
+
+          });
+
+          var x_section = $('a[href="#edit-group-x-fees-collected-for-proce"]');
+          x_section.click(function() {
+              $( "input[name*='field_fees_x']").filter("input[name*='field_total_fees']").each(function() {
+                  console.log(this);
+                  // Get all X sections
+                  // For each X section create .change function on total_fees field.
+              });
+
+          });
+
+          // Create function that calcs perc_costs from sum of changed field and the corresponding input field.
+          function calcPercCosts(changed, input, target) {
+              // Get ID of changed field.
+
+              // Get value of corresponding agency_component field.
+
+              // Get ID of corresponding input field based on agency_component field.
+
+              // Calculate perc_costs from values of changed and input fields.
+
+          }
+
+          // Gets ID of changed field.
+          function fieldIdCheck(changed) {
+              console.log(changed);
+
+          }
+
+          // Gets agency_component field for given field.
+          function getAgencyComponent(changed) {
+              console.log(changed);
+          }
+
+          // Get input field based on changed field ID and agency_component value.
+          function getCalcField(changed, agency) {
+              console.log(changed);
+              console.log(agency);
+          }
+
+          //
 
 
       }
