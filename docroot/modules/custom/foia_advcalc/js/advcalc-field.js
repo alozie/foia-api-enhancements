@@ -116,62 +116,92 @@
 
           // Fields from IX and X to calculate field_perc_costs per agency.
           //FOIA Personnel and Costs IX. proc_costs / Fees X. total_fees  = Fees X. perc_costs
-          var ix_section = $('a[href="#edit-group-ix-foia-personnel-cost-wra"]');
-          ix_section.click(function() {
-              $( "input[name*='field_foia_pers_costs_ix']").filter("input[name*='field_proc_costs']").each(function() {
-                  console.log(this);
-                  // Get all IX sections.
-                  // For each IX section create .change function on proc_costs field.
-                  this.onchange(function(){
-                      var proc_costs_val = this.val();
-                      console.log(proc_costs_val);
-                  });
-              });
+          $( "input[name*='field_foia_pers_costs_ix']").filter("input[name*='field_proc_costs']").each(function() {
+              $(this).change(function() {
+                  var proc_costs_agency_val = getAgencyComponent($(this));
 
+                  if(proc_costs_agency_val != '_none') {
+                      var total_fees = getFieldByAgency('x_total_fees', proc_costs_agency_val);
+                      var target = getFieldByAgency('x_perc_costs', proc_costs_agency_val);
+                      calcPercCosts($(this), total_fees, target);
+                  }
+              });
           });
 
-          var x_section = $('a[href="#edit-group-x-fees-collected-for-proce"]');
-          x_section.click(function() {
-              $( "input[name*='field_fees_x']").filter("input[name*='field_total_fees']").each(function() {
-                  console.log(this);
-                  // Get all X sections
-                  // For each X section create .change function on total_fees field.
-              });
+          $( "input[name*='field_fees_x']").filter("input[name*='field_total_fees']").each(function() {
+              $(this).change(function() {
+                  var total_fees_agency_val = getAgencyComponent($(this));
 
+                  if(total_fees_agency_val != '_none') {
+                      var proc_costs = getFieldByAgency('ix_proc_costs', total_fees_agency_val);
+                      var target = getFieldByAgency('x_perc_costs', total_fees_agency_val);
+                      calcPercCosts($(this), proc_costs, target);
+                  }
+              });
+              // Get all X sections
+              // For each X section create .change function on total_fees field.
           });
 
           // Create function that calcs perc_costs from sum of changed field and the corresponding input field.
-          function calcPercCosts(changed, input, target) {
-              // Get ID of changed field.
-
-              // Get value of corresponding agency_component field.
-
-              // Get ID of corresponding input field based on agency_component field.
-
+          function calcPercCosts(proc_costs, total_fees, perc_costs) {
+              var perc_costs_val;
               // Calculate perc_costs from values of changed and input fields.
+              if(total_fees.val != 0) {
+                  //set value of target field
+                  perc_costs_val = proc_costs.val() / total_fees.val();
+                  perc_costs_val = Math.round(perc_costs_val * 10000) / 10000; // Round to 4 decimal places
+                  $(perc_costs).val(perc_costs_val);
 
-          }
+                  return perc_costs;
+              }
 
-          // Gets ID of changed field.
-          function fieldIdCheck(changed) {
-              console.log(changed);
 
           }
 
           // Gets agency_component field for given field.
           function getAgencyComponent(changed) {
-              console.log(changed);
+              return $(changed).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
           }
 
           // Get input field based on changed field ID and agency_component value.
-          function getCalcField(changed, agency) {
-              console.log(changed);
-              console.log(agency);
+          function getFieldByAgency(field, agency) {
+              var result;
+              var element;
+              var element_agency;
+              switch (field) {
+                  case 'x_total_fees':
+                      element = $( "input[name*='field_fees_x']").filter("input[name*='field_total_fees']");
+                      $(element).each(function() {
+                          element_agency = getAgencyComponent($(this));
+                          if (agency == element_agency) {
+                              result = $(this);
+                          }
+                      });
+                      break;
+                  case 'ix_proc_costs':
+                      element = $( "input[name*='field_foia_pers_costs_ix']").filter("input[name*='field_proc_costs']");
+                      $(element).each(function() {
+                          element_agency = getAgencyComponent($(this));
+                          if (agency == element_agency) {
+                              result = $(this);
+                          }
+                      });
+                      break;
+                  case 'x_perc_costs':
+                      element = $( "input[name*='field_fees_x']").filter("input[name*='field_perc_costs']");
+                      $(element).each(function() {
+                          element_agency = getAgencyComponent($(this));
+                          if (agency == element_agency) {
+                              result = $(this);
+                          }
+                      });
+                      break;
+                  default:
+                      result = false;
+              }
+              return $(result);
           }
-
-          //
-
-
+          
       }
   }
 })(jQuery, drupalSettings, Drupal);
