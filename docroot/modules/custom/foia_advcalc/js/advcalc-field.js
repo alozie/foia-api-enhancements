@@ -4,10 +4,10 @@
 
           // Fields from sections IX and X to calculate overall_x_perc_costs.
           $("#edit-field-overall-ix-proc-costs-0-value, #edit-field-overall-x-total-fees-0-value").change(function() {
-              var overall_ix_proc_costs = Number($("#edit-field-overall-ix-proc-costs-0-value").val());
-              if ( overall_ix_proc_costs > 0 ) {
-                  var overall_x_total_fees = Number($("#edit-field-overall-x-total-fees-0-value").val());
-                  var overall_x_perc_costs = overall_x_total_fees / overall_ix_proc_costs;
+              var overall_x_total_fees = Number($("#edit-field-overall-x-total-fees-0-value").val());
+              if ( overall_x_total_fees > 0 ) {
+                  var overall_ix_proc_costs = Number($("#edit-field-overall-ix-proc-costs-0-value").val());
+                  var overall_x_perc_costs =  overall_ix_proc_costs / overall_x_total_fees;
                   var overall_x_perc_costs = Math.round(overall_x_perc_costs * 10000) / 10000; // Round to 4 decimal places
                   $('#edit-field-overall-x-perc-costs-0-value').val(overall_x_perc_costs);
               }
@@ -116,6 +116,7 @@
 
           // Fields from IX and X to calculate field_perc_costs per agency.
           //FOIA Personnel and Costs IX. proc_costs / Fees X. total_fees  = Fees X. perc_costs
+          // If section IX proc_costs field changes.
           $( "input[name*='field_foia_pers_costs_ix']").filter("input[name*='field_proc_costs']").each(function() {
               $(this).change(function() {
                   var proc_costs_agency_val = getAgencyComponent($(this));
@@ -128,6 +129,7 @@
               });
           });
 
+          // If section X total_fees field changes.
           $( "input[name*='field_fees_x']").filter("input[name*='field_total_fees']").each(function() {
               $(this).change(function() {
                   var total_fees_agency_val = getAgencyComponent($(this));
@@ -135,27 +137,21 @@
                   if(total_fees_agency_val != '_none') {
                       var proc_costs = getFieldByAgency('ix_proc_costs', total_fees_agency_val);
                       var target = getFieldByAgency('x_perc_costs', total_fees_agency_val);
-                      calcPercCosts($(this), proc_costs, target);
+                      calcPercCosts(proc_costs, $(this), target);
                   }
               });
-              // Get all X sections
-              // For each X section create .change function on total_fees field.
           });
 
-          // Create function that calcs perc_costs from sum of changed field and the corresponding input field.
+          // Calculates perc_costs from proc_costs divided by total_fees.
           function calcPercCosts(proc_costs, total_fees, perc_costs) {
               var perc_costs_val;
-              // Calculate perc_costs from values of changed and input fields.
-              if(total_fees.val != 0) {
+              if(total_fees.val() > 0) {
                   //set value of target field
                   perc_costs_val = proc_costs.val() / total_fees.val();
                   perc_costs_val = Math.round(perc_costs_val * 10000) / 10000; // Round to 4 decimal places
                   $(perc_costs).val(perc_costs_val);
-
                   return perc_costs;
               }
-
-
           }
 
           // Gets agency_component field for given field.
@@ -201,7 +197,6 @@
               }
               return $(result);
           }
-          
       }
   }
 })(jQuery, drupalSettings, Drupal);
