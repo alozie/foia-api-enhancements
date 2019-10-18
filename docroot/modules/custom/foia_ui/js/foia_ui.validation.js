@@ -567,6 +567,41 @@
         }
       });
 
+      // V.B.(1) Agency Component Other*
+      $( "input[name*='field_foia_requests_vb1']").filter("input[name*='field_oth']").each(function() {
+          $(this).rules( "add", {
+              equalToComp: $("input[name*='field_foia_requests_vb2']").filter("input[name*='field_total']"),
+              messages: {
+                  equalToComp: "Must match V.A. Agency Number of Requests Processed in Fiscal Year"
+              }
+          });
+      });
+
+      // V.B.(1) Agency Number of Full Denials Based on Exemptions
+        $( "input[name*='field_foia_requests_vb1']").filter("input[name*='field_full_denials_ex']").each(function() {
+          $(this).rules( "add", {
+            lessThanEqualSumComp: [
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_1']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_2']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_3']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_4']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_5']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_6']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_7a']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_7b']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_7c']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_7d']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_7e']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_7f']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_8']"),
+              $("input[name*='field_foia_requests_vb3']").filter("input[name*='field_ex_9']"),
+            ],
+          messages: {
+              lessThanEqualSumComp: "This field should be no more than the sum of the fields V.B.(3) Ex.1 through V.B.(3) Ex.9. for the corresponding agency."
+          }
+        })
+      });
+
       // V.B. (2) (Component) Number of Times "Other" Reason Was Relied Upon
       $( "#edit-field-foia-requests-vb2-0-subform-field-foia-req-vb2-info-0-subform-field-num-relied-upon-0-value").rules( "add", {
         notNegative: true,
@@ -582,6 +617,16 @@
         messages: {
           equalTo: "Must match VI.B. Agency Overall Total"
         }
+      });
+
+      // VI.A. Administrative Appeals Processed During Fiscal Year from Current Annual Report
+      $( "input[name*='field_admin_app_via']").filter("input[name*='field_app_processed_yr']").each(function() {
+        $(this).rules( "add", {
+          equalToComp: $( "input[name*='field_admin_app_vib']").filter("input[name*='field_total']"),
+          messages: {
+            equalToComp: "Must match VI.B. Total Processed Appeals in Fiscal Year for corresponding agency/component"
+          }
+        });
       });
 
       // VI.B. Administrative Appeals
