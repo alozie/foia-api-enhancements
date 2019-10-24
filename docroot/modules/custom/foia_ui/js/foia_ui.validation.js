@@ -262,7 +262,6 @@
         return this.optional(element) || (value >= min) && (value <= max);
       }, "Must be between the smallest and largest values.");
 
-
       // equalToLowestComp
       jQuery.validator.addMethod("equalToLowestComp", function(value, element, params) {
         value = convertSpecialToZero(value);
@@ -329,6 +328,26 @@
         var average = sum/params.length;
         return this.optional(element) || !(value == average);
       }, "Must not be equal to the average.");
+
+      // greaterThanZeroSumComp
+      jQuery.validator.addMethod("greaterThanZeroSumComp", function(value, element, params) {
+        var elementAgencyComponent = $(element).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+        var sum = 0;
+        if (value > 0) {
+]          for (var i = 0; i < params.length; i++) {
+            for (var j = 0; j < params[i].length; j++) {
+              var paramAgencyComponent = $(params[i][j]).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+              if (paramAgencyComponent == elementAgencyComponent) {
+                sum += Number($(params[i][j]).val());
+              }
+            }
+          }
+          return this.optional(element) || sum > 0;
+        }
+        else {
+          return true;
+        }
+      }, "Sum of the fields must be greater than zero.");
 
       // vb1matchDispositionComp: hard-coded for V.B.(1)
       jQuery.validator.addMethod("vb1matchDispositionComp", function(value, element, params) {
@@ -634,6 +653,27 @@
         });
       });
 
+      // VI.A. Agency Overall Number of Appeals Processed in Fiscal Year
+      $( "input[name*='field_admin_app_via']").filter("input[name*='field_app_pend_end_yr']").each(function() {
+        $(this).rules( "add", {
+          greaterThanZeroSumComp: [
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_1']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_2']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_3']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_4']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_5']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_6']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_7']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_8']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_9']"),
+            $("input[name*='field_admin_app_vic5']").filter("input[name*='field_num_days_10']"),
+          ],
+          messages: {
+            greaterThanZeroSumComp: "Must match VI.C.5. must have values > 0."
+          }
+        });
+      });
+
       // VI.B. Administrative Appeals
       $( "input[name*='field_admin_app_vib']").filter("input[name*='field_closed_oth_app']").each(function() {
         $(this).rules( "add", {
@@ -670,6 +710,16 @@
         messages: {
           lessThanEqualSum: "This field should be no more than the sum of the fields in VI.C.(2)."
         }
+      });
+
+      // VI.C.2 Reasons for Denial on Appeal -- "Other" Reasons
+      $( "input[name*='field_admin_app_vic2']").filter("input[name*='field_oth']").each(function() {
+        $(this).rules( "add", {
+          equalToComp: $( "input[name*='field_admin_app_vic3']").filter("input[name*='field_total']"),
+          messages: {
+            equalToComp: "Must match VI.B. Total Processed Appeals in Fiscal Year for corresponding agency/component"
+          }
+        });
       });
 
       // VI.C.(4) - Administrative Appeals
