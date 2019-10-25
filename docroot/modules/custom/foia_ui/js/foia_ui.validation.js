@@ -334,7 +334,7 @@
         var elementAgencyComponent = $(element).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
         var sum = 0;
         if (value > 0) {
-]          for (var i = 0; i < params.length; i++) {
+          for (var i = 0; i < params.length; i++) {
             for (var j = 0; j < params[i].length; j++) {
               var paramAgencyComponent = $(params[i][j]).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
               if (paramAgencyComponent == elementAgencyComponent) {
@@ -382,6 +382,47 @@
         return (reqProcessedYr == sumVIICTotals - Number(value) - otherField);
 
       }, "Must not be equal to the average.");
+
+      /**
+       * weightedAverageComp
+       *
+       * Check that the Overall Average of Requests equals the weighted average.
+       *
+       * Calculates the weighted average by dividing the sum of the element
+       * value by the corresponding weight value by the sum of the weight
+       * values.
+       *
+       */
+      jQuery.validator.addMethod("weightedAverageComp", function(value, element, params) {
+        // var elementAgencyComponent = $(element).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+        console.log(value);
+        var comp_vals = params[0];
+        console.log(comp_vals);
+        var weight_vals = params[1];
+        console.log(weight_vals);
+        var prod_sum = 0;
+        var weight_sum = 0;
+        var weight_ave = 0;
+        for (var i = 0; i < comp_vals.length; i++) {
+          var compValsComponent = comp_vals.parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+          for (var j = 0; j < weight_vals.length; j++) {
+            var weightValsComponent = weight_vals.parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+            if (compValsComponent == weightValsComponent) {
+              console.log("comparison component name: " + compValsComponent + "; componenet field val: " + $( comp_vals[i] ).val());
+              console.log("weight component name: " + weightValsComponent + "; weight field val: " + $( weight_vals[j] ).val());
+              prod_sum += Number($( comp_vals[i] ).val()) * Number($( weight_vals[j] ).val());
+              weight_sum += Number($( weight_vals[j] ).val());
+            }
+          }
+        }
+        console.log(prod_sum);
+        console.log(weight_sum);
+        weight_ave = prod_sum / weight_sum;
+        console.log(weight_ave);
+        if ( Math.round(value) == Math.round(weight_ave) ) {
+          return this.optional(element) || Math.round(value) == Math.round(weight_ave);
+        }
+      }, "Must be greater than or equal to sum of the fields.");
 
       /**
        * Form validation call
@@ -944,6 +985,17 @@
           equalToHighestComp: "Must equal largest value of Highest number of days."
         }
       });
+
+      // VII.A. FOIA REQUESTS -- RESPONSE TIME FOR ALL PROCESSED PERFECTED REQUESTS
+      $( "#edit-field-overall-viia-sim-avg-0-value").rules( "add", {
+        weightedAverageComp: [
+          $("input[name*='field_proc_req_viia']").filter("input[name*='field_sim_avg']"),
+          $("input[name*='field_proc_req_viic1']").filter("input[name*='field_total']")
+        ],
+        messages: {
+          weightedAverageComp: "This field should equal the weighted average of the weighted average of the component simple average fields."
+        }
+        });
 
       // VII.D. Simple - Number Pending
       $( "#edit-field-overall-viid-sim-pend-0-value").rules( "add", {
