@@ -80,6 +80,48 @@
         });
       }
 
+      /**
+       *
+       */
+      function isEmpty(str) {
+          return (!str || 0 === str.length);
+      }
+
+      /**
+       * Gets values for field across all components
+       *
+       * @param {string} componentId
+       *    The node edit paragraph component HTML fragment ID.
+       * @param {string} componentFieldName
+       *    The paragraph component field machine name.
+       * @returns {array}
+       */
+      function getAllParagraphFieldValues(componentId, componentFieldName) {
+          var fieldVals = [];
+          var fields = $("input[id^='" + componentId + "']").filter("input[name*='" + componentFieldName + "']");
+          console.log("getAllParagraphFieldValues");
+          console.log(fields);
+          fields.each(function() {
+              console.log("paragraph field");
+              console.log($(this));
+              console.log($(this).val);
+              fieldVals.push($(this).val());
+          });
+          return fieldVals;
+      }
+
+      /**
+       *
+       */
+      function hasNaVal(value) {
+        if(!isEmpty(value) && value.toLowerCase() == 'n/a') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+
       // Fields from sections IX and X to calculate overall_x_perc_costs.
       $("#edit-field-overall-ix-proc-costs-0-value, #edit-field-overall-x-total-fees-0-value").change(function() {
         var overall_x_total_fees = Number($("#edit-field-overall-x-total-fees-0-value").val());
@@ -193,6 +235,80 @@
         });
 
       });
+
+      // Sections VII A and VII B autofill Agency Overall Lowest and Highest
+      // with `N/A` where all agency Lowest/Highest Number of Days are `N/A`.
+      // field_proc_req_viia[1][subform][field_sim_low][0][value]
+      // If change to VIIA Lowest field get values of VIIA Lowest for all components.
+      $( "input[name*='field_proc_req_viia']").filter("input[name*='field_sim_low']").each(function() {
+        $(this).change(function() {
+          // Checks whether Lowest field values for all components are `N/A` (or blank?).
+          var viia_lowest_na = true;
+          console.log("Checking Simple Lowest");
+          // For each agency Lowest field, if not equal to `N/A` (or blank), set viia_lowest to FALSE.
+          var viia_lowest_vals = getAllParagraphFieldValues('field_proc_req_viia', 'field_sim_low');
+          var viia_lowest_len = viia_lowest_vals.length;
+          console.log("lowest length: " + viia_lowest_len);
+
+          for (i = 0; i < viia_lowest_len; i++) {
+            if (!hasNaVal(viia_lowest_vals[i])) {
+              console.log("field value does not equal N/A");
+              viia_lowest_na = false;
+            }
+          }
+
+          // If all VIIA Lowest field values are `N/A` set overall_lowest to `N/A`.
+          if (viia_lowest_na) {
+              console.log("All values N/A");
+            $("#edit-field-overall-viia-sim-low-0-value").val("N/A");
+          }
+          else {
+              console.log("A field has value not 'N/A'.");
+              calcOverall('edit-field-proc-req-viia', 'field_sim_low', 'edit-field-overall-viia-sim-low-0-value', '<');
+          }
+        });
+      });
+
+      // If change to VIIA Highest field get values of VIIA Highest for all components.
+      $( "input[name*='field_proc_req_viia']").filter("input[name*='field_sim_high']").each(function() {
+        $(this).change(function() {
+          // Checks whether Lowest field values for all components are `N/A` (or blank?).
+          var viia_highest_na = true;
+          console.log("Checking Simple Highest");
+          // For each agency Lowest field, if not equal to `N/A` (or blank), set viia_lowest to FALSE.
+          var viia_highest_vals = getAllParagraphFieldValues('field_proc_req_viia', 'field_high_low');
+          var viia_highest_len = viia_highest_vals.length;
+          console.log("highest length: " + viia_highest_len);
+
+          for (i = 0; i < viia_highest_len; i++) {
+            if (!hasNaVal(viia_highest_vals[i])) {
+              viia_highest_na = false;
+            }
+          }
+
+          // If all VIIA Highest field values are `N/A` set overall_lowest to `N/A`.
+          if (viia_highest_na) {
+            $("#edit-field-overall-viia-sim-high-0-value").val("N/A");
+          }
+          else {
+              calcOverall('edit-field-proc-req-viia', 'field_sim_low', 'edit-field-overall-viia-sim-high-0-value', '<');
+          }
+        });
+      });
+      // // Checks whether Highest field values for all components are `N/A` (or blank?).
+      // var viia_highest_na = TRUE;
+      // // For each agency Highest field, if not equal to `N/A` (or blank), set viia_lowest to FALSE.
+      //
+      // var viib = $('input[id^="edit-field-proc-req-viib"]');
+      // // If change to VIIB Lowest field get values of VIIA Lowest for all components.
+      //   // Checks whether Lowest field values for all components are `N/A` (or blank?).
+      //   var viib_lowest = TRUE;
+      //   // For each agency Lowest field, if not equal to `N/A` (or blank), set viia_lowest to FALSE.
+      //
+      // // If change to VIIB Highest field get values of VIIA Highest for all components.
+      //   // Checks whether Highest field values for all components are `N/A` (or blank?).
+      //   var viia_highest = TRUE;
+      //   // For each agency Highest field, if not equal to `N/A` (or blank), set viia_lowest to FALSE.
 
       // Section XII B automatically calculate field_pend_end_yr.
       // pend_start_yr + con_during_yr - proc_start_yr = pend_end_yr
