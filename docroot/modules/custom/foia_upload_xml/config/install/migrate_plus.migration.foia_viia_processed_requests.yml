@@ -204,6 +204,11 @@ process:
         LT1: '<1'
       bypass: true
     -
+      plugin: static_map
+      map:
+        LT1: '<1'
+      bypass: true
+    -
       plugin: default_value
       default_value: N/A
   temp_field_sim_high:
@@ -288,6 +293,11 @@ process:
         LT1: '<1'
       bypass: true
     -
+      plugin: static_map
+      map:
+        LT1: '<1'
+      bypass: true
+    -
       plugin: default_value
       default_value: N/A
   temp_field_comp_high:
@@ -366,6 +376,11 @@ process:
       callable: 'array_filter'
     -
       plugin: array_shift
+    -
+      plugin: static_map
+      map:
+        LT1: '<1'
+      bypass: true
     -
       plugin: static_map
       map:
