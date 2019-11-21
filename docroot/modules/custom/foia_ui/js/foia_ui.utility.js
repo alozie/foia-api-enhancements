@@ -43,6 +43,8 @@
      * Checks whether value is empty, null, or undefined.
      *
      * @param value
+     *   A string or numeric variable.
+     * @returns {boolean}
      */
     isEmpty: function (value) {
       if ( typeof value == 'undefined' || !value || value === 0 || value.length == 0 ) {
@@ -57,6 +59,8 @@
      * Checks whether selected Agency Component is ' - None - '.
      *
      * @param agencyComponentVal
+     *   A string or numeric value provided as the Agency Component.
+     * @returns {boolean}
      */
     hasAgencyComponent: function (agencyComponentVal) {
       if ( Drupal.FoiaUI.isEmpty(agencyComponentVal) || agencyComponentVal == '_none') {
