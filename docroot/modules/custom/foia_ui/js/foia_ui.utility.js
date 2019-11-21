@@ -59,7 +59,7 @@
      * @param agencyComponentVal
      */
     hasAgencyComponent: function (agencyComponentVal) {
-      if ( agencyComponentVal == '_none') {
+      if ( Drupal.FoiaUI.isEmpty(agencyComponentVal) || agencyComponentVal == '_none') {
         return false;
       }
       else {

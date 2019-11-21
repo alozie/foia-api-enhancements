@@ -17,7 +17,6 @@
        */
       var specialNumber = Drupal.FoiaUI.specialNumber;
       var getAgencyComponent = Drupal.FoiaUI.getAgencyComponent;
-      var isEmpty = Drupal.FoiaUI.isEmpty;
       var hasAgencyComponent = Drupal.FoiaUI.hasAgencyComponent;
 
       /**
@@ -160,7 +159,7 @@
       // ifGreaterThanZeroComp
       jQuery.validator.addMethod("ifGreaterThanZeroComp", function (value, element, params) {
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           for (var i = 0; i < params.length; i++){
             var paramAgencyComponent = getAgencyComponent(params[i]);
             if (paramAgencyComponent == elementAgencyComponent) {
@@ -199,7 +198,7 @@
         value = specialNumber(value);
         var sum = 0;
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           for (var i = 0; i < params.length; i++){
             for (var j = 0; j < params[i].length; j++){
               var paramAgencyComponent = getAgencyComponent(params[i][j]);
@@ -222,7 +221,7 @@
           sum += specialNumber($(sumElement).val());
         });
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           for (var i = 0; i < params.target.length; i++){
             var paramAgencyComponent = getAgencyComponent(params.target[i]);
             if (paramAgencyComponent == elementAgencyComponent) {
@@ -236,7 +235,7 @@
       // equalToComp
       jQuery.validator.addMethod("equalToComp", function (value, element, params) {
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           for (var i = 0; i < params.length; i++){
             var paramAgencyComponent = getAgencyComponent(params[i]);
             if (paramAgencyComponent == elementAgencyComponent) {
@@ -251,7 +250,7 @@
       jQuery.validator.addMethod("lessThanEqualComp", function (value, element, params) {
         value = specialNumber(value);
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           for (var i = 0; i < params.length; i++){
             var paramAgencyComponent = getAgencyComponent(params[i]);
             if (paramAgencyComponent == elementAgencyComponent) {
@@ -272,7 +271,7 @@
       // greaterThanEqualComp
       jQuery.validator.addMethod("greaterThanEqualComp", function (value, element, params) {
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           for (var i = 0; i < params.length; i++){
             var paramAgencyComponent = getAgencyComponent(params[i]);
             if (paramAgencyComponent == elementAgencyComponent) {
@@ -285,7 +284,7 @@
 
       jQuery.validator.addMethod("greaterThanEqualSumComp", function (value, element, params) {
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           var sum = 0;
           for (var i = 0; i < params.length; i++) {
             var paramAgencyComponent = getAgencyComponent(params[i]);
@@ -369,7 +368,7 @@
       // greaterThanZeroSumComp
       jQuery.validator.addMethod("greaterThanZeroSumComp", function (value, element, params) {
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           var sum = 0;
           if (value > 0) {
             for (var i = 0; i < params.length; i++) {
@@ -392,7 +391,7 @@
       jQuery.validator.addMethod("vb1matchDispositionComp", function (value, element, params) {
         var allReqProcessedYr = $( "input[name*='field_foia_requests_va']").filter("input[name*='field_req_processed_yr']");
         var elementAgencyComponent = getAgencyComponent(element);
-        if (!isEmpty(elementAgencyComponent) && hasAgencyComponent(elementAgencyComponent)) {
+        if (hasAgencyComponent(elementAgencyComponent)) {
           var reqProcessedYr = null;
           var otherField = null;
           var sumVIICTotals = 0;
