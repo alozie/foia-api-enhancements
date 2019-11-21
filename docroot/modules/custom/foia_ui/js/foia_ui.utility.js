@@ -37,7 +37,36 @@
      */
     getAgencyComponent: function (changed) {
       return $(changed).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+    },
+
+    /**
+     * Checks whether value is empty, null, or undefined.
+     *
+     * @param value
+     */
+    isEmpty: function (value) {
+      if ( typeof value == 'undefined' || !value || value === 0 || value.length == 0 ) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+
+    /**
+     * Checks whether selected Agency Component is ' - None - '.
+     *
+     * @param agencyComponentVal
+     */
+    hasAgencyComponent: function (agencyComponentVal) {
+      if ( agencyComponentVal == '_none') {
+        return false;
+      }
+      else {
+        return true;
+      }
     }
+
   }
 
 })(jQuery, drupalSettings);
