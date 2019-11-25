@@ -2,24 +2,48 @@
   Drupal.behaviors.autocalcFields = {
     attach: function attach() {
       var autocalcSettings = drupalSettings.foiaAutocalc.autocalcSettings;
-      Object.keys(autocalcSettings).forEach(function(fieldName, fieldIndex) {
-        var fieldSettings = autocalcSettings[fieldName];
-        fieldSettings.forEach(function(fieldSetting) {
-          var fieldSelector = convertToFieldSelector(fieldSetting);
-          $(fieldSelector + ' input').each(function(index) {
-            // Calculate field on initial form load.
-            $(fieldSelector + ' input').each(function(index) {
-              calculateField(fieldName, fieldSettings);
+      console.log('checks autocalc settings.');
+      if (isDefined(autocalcSettings)) {
+        Object.keys(autocalcSettings).forEach(function(fieldName, fieldIndex) {
+          var fieldSettings = autocalcSettings[fieldName];
+          console.log('checks for field settings for: ' + fieldName + '-' + fieldIndex);
+          if (isDefined(fieldSettings)) {
+            fieldSettings.forEach(function(fieldSetting) {
+              var fieldSelector = convertToFieldSelector(fieldSetting);
+              console.log('checks for field selector');
+              if (isDefined(fieldSelector)) {
+                $(fieldSelector + ' input').each(function(index) {
+                    // Calculate field on initial form load.
+                    console.log('calculates field value on initial load.');
+                    var calcFieldSelector = convertToFieldSelector(fieldName + ' input');
+                    var fieldInput = $(calcFieldSelector);
+                    console.log('check whether field has input value.');
+                    if(isDefined(fieldInput)) {
+                      var fieldInputValue = fieldInput.val();
+                    }
+                    if (!fieldInputValue) {
+                      console.log('field is empty so autocalculate a value.');
+                      $(fieldSelector + ' input').each(function(index) {
+                        calculateField(fieldName, fieldSettings);
+                      });
+                    }
+                    // Bind event listeners to calculate field when input fields are changed.
+                    $(this).once(fieldSelector + '_' + fieldIndex + '_' + index).on('change', function() {
+                        calculateField(fieldName, fieldSettings);
+                    });
+                });
+              }
             });
-            // Bind event listeners to calculate field when input fields are changed.
-            $(this).once(fieldSelector + '_' + fieldIndex + '_' + index).on('change', function() {
-              calculateField(fieldName, fieldSettings);
-            });
-          });
+          }
         });
-      });
+      }
     }
   };
+
+  // Determine whether variable is defined.
+  function isDefined(value) {
+    return (typeof(value) !== 'undefined');
+  }
 
   // Determines the value of the automatically calculated field.
   function calculateField(fieldName, fieldSettings) {
@@ -78,11 +102,16 @@
 
   // Converts field autocalc settings to a jQuery selector.
   function convertToFieldSelector(fieldSetting) {
-    var selector = '.field--name-' + fieldSetting.field.replace(/_/g, '-');
-    if (fieldSetting.hasOwnProperty('subfield')) {
-      selector += ' ' + convertToFieldSelector(fieldSetting.subfield);
+    if (isDefined(fieldSetting.field)) {
+        var selector = '.field--name-' + fieldSetting.field.replace(/_/g, '-');
+        if (fieldSetting.hasOwnProperty('subfield')) {
+            selector += ' ' + convertToFieldSelector(fieldSetting.subfield);
+        }
+        return selector;
     }
-    return selector;
+    else {
+      return false;
+    }
   }
 
   function isNumeric(n) {
